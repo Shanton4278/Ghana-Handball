@@ -1,0 +1,51 @@
+<section id="background">
+<div class="main w-[60%] md:w-[45%] lg:w-[38%]  m-auto text-center flex flex-col min-h-screen h-[30vh] 
+justify-center font-outfit pb-[120px]">
+
+<div>
+    <h1 class="text-gray-800 text-[22px] font-[1000] md:text-[24px] lg:text-[28px]"><strong>Sign In To Your Account.</strong></h1>
+    <p class="text-gray-600">Enter your personal information to login</p>
+ </div>
+
+ <!-- Form -->
+<div class="flex flex-col">
+    <form>
+        <div class="flex flex-col h-[180px] justify-around ">
+
+        <!-- <nz-input-group class="text-left ">
+            <input
+              nz-input
+              placeholder="honiu@gmail.com"
+              class="border-2 border-[#DADADA] text-[#747474] 
+            rounded-[20px] p-2 text-gray-500 h-[50px] focus:border-blue-900 focus:outline-none"/>
+          </nz-input-group>        
+
+        <nz-input-group class="text-left">
+            <input
+              nz-input
+              placeholder="***********"
+              class="border-2 border-[#DADADA] text-[#747474] 
+            rounded-[20px] p-2 text-gray-500 h-[50px] focus:border-blue-900 focus:outline-none"/>
+          </nz-input-group> -->
+        
+    </div>
+    </form>
+
+    <!-- Checkbox & Forgot password -->
+    <div class="flex flex-col md:flex flex-row lg:flex lg:justify-between  text-[16px]">
+        <div class="flex space-x-2">
+            <label nz-checkbox class=" checked:bg-[#1D0434] text-[10px] md:text-[13px] lg:text-[16px]">Remember me</label>
+        </div>
+        <div class="flex items-center">
+            <p><a href="" class="fg text-[14px] md:text-[16px] lg:text-[14px]" routerLink="/auth/forgotpassword">Forgot Password?</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- button sign in -->
+<div>
+    <button type="link"  nz-button class="butt w-[100%] font-bold">Sign in</button>
+</div>
+
+</div>
+</section>

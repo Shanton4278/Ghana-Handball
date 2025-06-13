@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+// #background{
+//     background-image: url(../Ahr-images/background\ 1.svg);
+//     background-repeat: no-repeat;
+//     background-position: bottom ;
+    
+// .outfit-uniquifier {
+//     font-family: "Outfit", serif;
+//     font-optical-sizing: auto;
+//     font-weight: weight;
+//     font-style: normal;
+//   }
+// }
+
+.reg{
+  background-image:
+  url('/assets/images/rectangle-gradient.svg'),
+   url('/assets/images/girlsphoto.svg');
+  background-repeat: no-repeat no-repeat;
+  background-position: bottom, top;
+  background-size: auto;
+  height: 93.5vh;
+}
+
+.outfit {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+
+.bricolage-grotesque {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}

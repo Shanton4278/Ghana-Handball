@@ -1,0 +1,108 @@
+
+<section class="main flex flex-col">
+<!-- BACK ICON -->
+<div class="flex pl-[50px] md:pl-[120px] lg:pl-[120px] pt-[70px] gap-x-2">
+  <a [routerLink]="['/app-layout/layout/card']" class="border-1 border-gray-500 rounded-[50%] p-2 flex items-center justify-center">
+    <img src="assets/images/backicon.svg" class="h-[20px] w-[20px]">
+  </a>
+  <p class="pt-[7px] text-[#464040]">Back</p> 
+</div>
+
+
+    <div class="flex flex-col items-center justify-center w-full max-w-[1000px] pl-8 pr-8 m-auto rounded-lg">  
+      <div class="text-center">
+        <h1 class="text-gray-800 text-[14px] font-[500] md:text-[18px] lg:text-[18px]">
+            <strong>Register to Secure Your Spot</strong>
+        </h1>
+        <p class="text-gray-600">Limited spaces available. Start your booking now.</p>
+      </div>
+  
+      <!-- form -->
+      <form class="w-full space-y-6 pt-[50px] gap-4" nzform >
+        <div class="w-full md:grid md:grid-cols-2 lg:grid-cols-2 gap-4">
+            <nz-form-item>
+              <label for="" class="text-[#1E1E1C] text-[15px] font-400">First Name</label>
+              <input type="text" placeholder="Enter your legal first name"
+                class="mt-1 p-3 lg:p-2 border border-[#DADADA] bg-[#FFFFFF] rounded-lg w-full md:w-[439px] lg:w-[439px] focus:outline-none focus:ring-1 focus:ring-blue-500">
+            </nz-form-item>
+          
+            <nz-form-item>
+              <label for="" class="text-[#1E1E1C] text-[15px] font-400">Last Name</label>
+              <input type="text" placeholder="Enter Last Name"
+                class="mt-1 p-3 lg:p-2 border border-[#DADADA] bg-[#FFFFFF] rounded-lg w-full md:w-[439px] lg:w-[439px] focus:outline-none focus:ring-1 focus:ring-blue-500">
+            </nz-form-item>
+          </div>
+          
+        <div class="w-full md:grid md:grid-cols-2 lg:grid lg:grid-cols-2 gap-4">
+            <nz-form-item>
+                <label for="gender" class="text-[#1E1E1C] text-[15px] font-400">Gender</label>
+                <select 
+                  name="gender"  
+                  class="custom-select mt-1 p-3 lg:p-2 border border-[#DADADA] bg-[#FFFFFF] rounded-lg w-full md:w-[439px] lg:w-[439px] focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  required
+                >
+                  <option value="" disabled selected hidden></option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                </select>
+              </nz-form-item>
+              
+
+            <nz-form-item>
+                <label for="" class="!text-[#1E1E1C] text-[15px] font-400">Date of Birth</label>
+                <input type="date" placeholder="Enter Phone Number" class="mt-1 p-3 lg:p-2 border border-[#DADADA] bg-[#FFFFFF] rounded-lg w-full md:w-[439px] lg:w-[439px] focus:outline-none
+                focus:ring-1 focus:ring-blue-500">
+            </nz-form-item>
+        </div>
+
+        <div class="w-full md:grid md:grid-cols-2 lg:grid lg:grid-cols-2 gap-4">
+            <nz-form-item>
+                <label for="" class="text-[#1E1E1C] text-[15px] font-400">ID Type</label>
+                <select type="text" placeholder="Select ID type" class="mt-1 p-3 lg:p-2 border border-[#DADADA] bg-[#FFFFFF] rounded-lg w-full md:w-[439px] lg:w-[439px] focus:outline-none
+                focus:ring-1 focus:ring-blue-500">
+                <option [ngValue]="null" disabled selected></option>
+                   <option value="Passport">Passport</option>
+                    <option value="National ID">National ID</option>
+                    <option value="Voter ID">Voter ID</option>
+                </select>
+            </nz-form-item>
+
+            <nz-form-item>
+                <label for="" class="text-[#1E1E1C] text-[15px] font-400">ID Number</label>
+                <input type="text" placeholder="Enter ID Number" class="mt-1 p-3 lg:p-2 border border-[#DADADA] bg-[#FFFFFF] rounded-lg w-full md:w-[439px] lg:w-[439px] focus:outline-none
+                focus:ring-1 focus:ring-blue-500">
+            </nz-form-item>
+        </div>
+
+        <div class="w-full md:grid md:grid-cols-2 lg:grid lg:grid-cols-2 gap-4">
+            <nz-form-item>
+                <label for="" class="text-[#1E1E1C] text-[15px] font-400">Email</label>
+                <input type="email" placeholder="Enter Email" class="mt-1 p-3 lg:p-2 border border-[#DADADA] bg-[#FFFFFF] rounded-lg w-full md:w-[439px] lg:w-[439px] focus:outline-none
+                focus:ring-1 focus:ring-blue-500">
+            </nz-form-item>
+
+            <nz-form-item>
+                <label for="" class="text-[#1E1E1C] text-[15px] font-400">Phone Number</label>
+                <input type="text" placeholder="Enter Phone Number" class="mt-1 p-3 lg:p-2 border border-[#DADADA] bg-[#FFFFFF] rounded-lg w-full md:w-[439px] lg:w-[439px] focus:outline-none
+                focus:ring-1 focus:ring-blue-500">
+            </nz-form-item>
+        </div>
+         
+      </form> 
+      
+    </div>
+    <div class="flex flex-row items-start ml-[100px] md:ml-[250px] lg:ml-[250px] pt-[10px]">
+        <label nz-checkbox class="mr-2 mt-[2px]"></label>
+        <span class="text-[12px] md:text-[14px] lg:text-[14px] !text-[#7C7C7C] pt-[3px]">
+          I agree to <span class="text-black font-500">terms and conditions</span>
+        </span>
+    </div>  
+        <div class="flex justify-center pt-[30px]">
+            <button nz-button class="butt bg-[#000000] rounded-[15px] 
+            md:h-[60px] lg:h-[60px] sm:h-[4vh] font-bold w-[48%] text-white">Continue</button>
+        </div>    
+    
+    
+  </section>
+  
