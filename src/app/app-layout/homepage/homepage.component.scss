@@ -1,0 +1,83 @@
+.reg-container {
+    text-align: center;
+    padding-top: 120px;
+    color: #FFFFFF;
+  }
+  
+  .reg-heading {
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 800;
+    color: #FFFFFF;
+  }
+  
+  @media (min-width: 768px) {
+    .reg-heading {
+      font-size: 27px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .reg-heading {
+      font-size: 48px;
+    }
+  }
+  
+  .reg-pride {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem; /* equivalent to space-x-1 */
+  }
+  
+  .red {
+    color: #EF4444; /* Tailwind red-500 */
+  }
+  
+  .yellow {
+    color: #FACC15; /* Tailwind yellow-500 */
+  }
+  
+  .green {
+    color: #22C55E; /* Tailwind green-500 */
+  }
+  
+  .passion-text {
+    color: #FFFFFF;
+  }
+  
+  .reg-subtext {
+    font-size: 10px;
+    margin-top: 0.75rem;
+    font-weight: 500;
+  }
+  
+  @media (min-width: 768px) {
+    .reg-subtext {
+      font-size: 16px;
+    }
+  }
+  
+  .reg-button-wrapper {
+    padding-top: 20px;
+  }
+  
+  .reg-button {
+    border: 6px solid #ECECEC;
+    background-color: #1E1E1E;
+    border-radius: 100px;
+    padding: 0.5rem;
+    width: 100px;
+    height: 39px;
+    font-size: 10px;
+    color: white;
+  }
+  
+  @media (min-width: 768px) {
+    .reg-button {
+      width: 156px;
+      height: 59px;
+      font-size: 16px;
+    }
+  }
+  

@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.reg-container{
+  background-image:
+   url('../src/assets/images/ladies.svg');
+  background-repeat: no-repeat no-repeat;
+  background-position: bottom, top;
+  background-size: auto;
+  height: 93.5vh;
+  height: 93.5vh;
+  font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 800;
+}
+
+.outfit {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  }
+  
+  
+  .bricolage-grotesque {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }

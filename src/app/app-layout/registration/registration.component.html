@@ -1,0 +1,96 @@
+<section class="main">
+    <!-- Back Icon -->
+    <div class="back-icon">
+      <a class="back-btn" [routerLink]="['/app-layout/layout/divisions']">
+        <img src="../../../assets/images/arrow.svg" class="icon">
+      </a>
+      <p class="back-text">Back</p>
+    </div>
+  
+    <!-- Form Wrapper -->
+    <div class="form-container">
+      <div class="text-center">
+        <h1><strong>Register to Secure Your Spot</strong></h1>
+        <p>Limited spaces available. Start your booking now.</p>
+      </div>
+  
+      <!-- Form -->
+      <form class="form-body" nzform>
+        <!-- First Row -->
+        <div class="form-grid">
+          <nz-form-item>
+            <label>First Name</label>
+            <input type="text" placeholder="Enter your legal first name">
+          </nz-form-item>
+  
+          <nz-form-item>
+            <label>Last Name</label>
+            <input type="text" placeholder="Enter Last Name">
+          </nz-form-item>
+        </div>
+  
+        <!-- Second Row -->
+        <div class="form-grid">
+          <nz-form-item>
+            <label for="gender">Gender</label>
+            <select name="gender" required>
+              <option value="" disabled selected hidden></option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </nz-form-item>
+  
+          <nz-form-item>
+            <label>Date of Birth</label>
+            <input type="date" placeholder="Enter Date of Birth">
+          </nz-form-item>
+        </div>
+  
+        <!-- Third Row -->
+        <div class="form-grid">
+          <nz-form-item>
+            <label>ID Type</label>
+            <select>
+              <option disabled selected></option>
+              <option value="Passport">Passport</option>
+              <option value="National ID">National ID</option>
+              <option value="Voter ID">Voter ID</option>
+            </select>
+          </nz-form-item>
+  
+          <nz-form-item>
+            <label>ID Number</label>
+            <input type="text" placeholder="Enter ID Number">
+          </nz-form-item>
+        </div>
+  
+        <!-- Fourth Row -->
+        <div class="form-grid">
+          <nz-form-item>
+            <label>Email</label>
+            <input type="email" placeholder="Enter Email">
+          </nz-form-item>
+  
+          <nz-form-item>
+            <label>Phone Number</label>
+            <input type="text" placeholder="Enter Phone Number">
+          </nz-form-item>
+        </div>
+      </form>
+    </div>
+  
+    <!-- Checkbox -->
+    <div class="terms-check">
+      <label nz-checkbox class="check-box"></label>
+      <span class="terms-text">
+        I agree to <span class="highlighted">terms and conditions</span>
+      </span>
+    </div>
+  
+    <!-- Submit Button -->
+    <div class="submit-btn-container">
+      <button nz-button class="submit-btn">Continue</button>
+    </div>
+  </section>
+  

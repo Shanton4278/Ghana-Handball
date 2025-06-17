@@ -1,0 +1,136 @@
+
+.active
+{
+  color: #16064A;
+  border-bottom: solid 2px #16064A !important;
+  /* padding: 4px 20px; */
+  // border-radius: 10px;
+  background-color: white;
+  font-weight: bold;
+  transition: all;
+  /* width: 100%; */
+}
+
+.active1{
+  border:1px solid #E5E7F1;
+  border-radius: 30px;
+  background-color: #F5F6FA !important;
+  color: #565656 !important;
+  opacity: 0.5px !important;
+  width: 80px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-container {
+    display: none;
+  }
+  
+  @media (min-width: 768px) {
+    .register-container {
+      display: flex;
+    }
+  }
+  
+  .register-button {
+    width: 70px;
+    height: 25px;
+    border: 1px solid #6B7280; /* Tailwind's gray-500 */
+    border-radius: 30px;
+    background-color: #1E1E1E;
+    color: #FFFFFF;
+    font-size: 12px;
+  }
+  
+  @media (min-width: 768px) {
+    .register-button {
+      width: 115px;
+      height: 45px;
+      font-size: 14px;
+    }
+  }
+  
+  /* Hide by default on medium and large screens */
+.mobile-nav {
+    display: flex;
+  }
+  
+  @media (min-width: 768px) {
+    .mobile-nav {
+      display: none;
+    }
+  }
+  
+  .menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .menu-icon {
+    width: 24px;
+    height: 24px;
+    color: #4B5563; /* Tailwind's text-gray-700 */
+  }
+  
+  /* Dropdown item styling */
+  .dropdown-item {
+    background-color: white !important;
+    color: #8E8E8E !important;
+  }
+
+  /* Show only on medium and large screens */
+.desktop-nav {
+    display: none;
+  }
+  
+  @media (min-width: 768px) {
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px; /* equivalent to md:gap-x-6 */
+      color: #8E8E8E;
+      font-weight: 500;
+    }
+  }
+  
+  .nav-link {
+    cursor: pointer;
+  }
+
+  .header-bar {
+    height: 53px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem; /* Tailwind's p-4 = 16px */
+    border-bottom: 1px solid #E1E1E1;
+  }
+  
+  .logo-img {
+    height: 50px;
+    width: 50px;
+  }
+  
+  .main-container {
+    background-color: white;
+    width: 100%;
+    height: 82vh;
+    position: absolute;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  @media (min-width: 768px) {
+    .main-container {
+      height: 85vh;
+    }
+  }
+  
+  
+  
