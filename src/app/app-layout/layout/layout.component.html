@@ -1,11 +1,11 @@
 
 <div class="header-bar">
-    <a [routerLink]="['/app-layout/layout/home']">
+    <a [routerLink]="['/home']">
       <img src="../../../assets/images/hdlogo.svg" alt="Logo" class="logo-img">
     </a>
   
     <div class="desktop-nav">
-        <div class="nav-link" [routerLink]="'/app-layout/layout/home'" routerLinkActive="active1">Home</div>
+        <div class="nav-link" [routerLink]="'/home'" routerLinkActive="active1">Home</div>
         <div class="nav-link">About Us</div>
         <div class="nav-link">Gallery</div>
         <div class="nav-link">Contact Us</div>
@@ -32,9 +32,9 @@
       
       
     <div class="register-container">
-        <a href="https://forms.cloud.microsoft/r/MsCdnwff6e" target="_blank" rel="noopener noreferrer">
-          <button class="register-button">Register</button>
-        </a>
+        <!-- <a href="https://forms.cloud.microsoft/r/MsCdnwff6e" target="_blank" rel="noopener noreferrer"> -->
+          <button routerLink="/divisions" class="register-button">Register</button>
+        <!-- </a> -->
       </div>
       
 </div>

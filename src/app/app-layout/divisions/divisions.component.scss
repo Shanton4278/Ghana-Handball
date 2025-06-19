@@ -61,14 +61,15 @@
       font-size: 16px;
     }
   }
-  
+
   .division-options {
     margin: auto;
     display: flex;
     gap: 1rem;
     padding-top: 20px;
   }
-  
+
+
   .division-card {
     position: relative;
     border: 1px solid #E5E5E5;
@@ -81,6 +82,7 @@
     font-size: 12px;
     font-weight: 500;
     transition: border 0.2s ease-in-out;
+    cursor: pointer;
   }
   
   .division-card:hover {
@@ -108,15 +110,42 @@
     transition: opacity 0.2s;
   }
   
-  .division-card:hover .check-icon {
+  .division-card.selected .check-icon {
+    border-color: black; 
+    background-color: #f5f5f5;
+    opacity: 1rem;
+  }
+
+  @media (hover: hover) {
+    .division-card:hover .check-icon {
+      opacity: 1;
+    }
+  }
+
+  .check-icon.selected,
+  .division-card:hover .check-icon{
+    opacity: 1rem;
+  }
+
+  .division-card:active .check-icon {
     opacity: 1;
   }
   
+  .division-card:active {
+    transform: scale(0.98);
+  }
+  
+  
   .division-icon {
+    display: block;
     margin: auto;
     width: 39px;
     height: 39px;
   }
+
+  // .division-icon:hover {
+  //   // background-image: url('../../../assets/images/blackhand.svg');
+  // }
   
   @media (min-width: 768px) {
     .division-icon {
@@ -124,7 +153,7 @@
       height: 59px;
     }
   }
-  
+
   .division-title {
     color: #1E1E1E;
     font-weight: 600;

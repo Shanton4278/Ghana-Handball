@@ -1,0 +1,48 @@
+.success-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #f6ffed;
+    padding-bottom: 30%;
+  }
+  
+//   .success-box {
+//     padding: 2rem;
+//     border-radius: 12px;
+//     background-color: #ffffff;
+//     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+//     max-width: 500px;
+//     width: 90%;
+//   }
+  
+  .success-icon {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 1rem;
+    background-color: #389e0d;
+    border-radius: 50%;
+  }
+  
+  .success-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #389e0d;
+    margin-bottom: 0.5rem;
+  }
+  
+  .success-message {
+    font-size: 16px;
+    color: #595959;
+    margin-bottom: 1.5rem;
+  }
+  
+  .success-button {
+    background-color: black;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    padding: 2px;
+  }
+  

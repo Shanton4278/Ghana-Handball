@@ -2,6 +2,7 @@
     text-align: center;
     padding-top: 120px;
     color: #FFFFFF;
+    width: 100%;
   }
   
   .reg-heading {
@@ -27,11 +28,11 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.25rem; /* equivalent to space-x-1 */
+    gap: 0.25rem;
   }
   
   .red {
-    color: #EF4444; /* Tailwind red-500 */
+    color: #EF4444;
   }
   
   .yellow {
@@ -63,7 +64,7 @@
   }
   
   .reg-button {
-    border: 6px solid #ECECEC;
+    border: 4px solid #ECECEC;
     background-color: #1E1E1E;
     border-radius: 100px;
     padding: 0.5rem;

@@ -1,7 +1,7 @@
 <section class="main">
     <!-- Back Icon -->
     <div class="back-icon">
-      <a class="back-btn" [routerLink]="['/app-layout/layout/divisions']">
+      <a class="back-btn" [routerLink]="['/divisions']">
         <img src="../../../assets/images/arrow.svg" class="icon">
       </a>
       <p class="back-text">Back</p>
@@ -15,17 +15,26 @@
       </div>
   
       <!-- Form -->
-      <form class="form-body" nzform>
+      <form class="form-body" nzform #registerForm="ngForm" (ngSubmit)="saveAndContinue(registerForm)">
+
+        <!-- <div>Profile Picture</div>
+        <div class="profile-upload" style="border: solid #000000 2px; border-radius: 50%; width: 70px; height: 70px; background-image: url('../../../assets/images/profile.svg');
+         display: flex; text-align: center; justify-content: center;" >
+              <img src="../../../assets/images/profile.svg" alt="" class="avatar-preview"> -->
+            <!-- <input type="file" id="imageUrl" name="imageUrl" [(ngModel)]="registerData.imageUrl" (change)="onFileSelected($event)" accept="image/*" hidden />
+         
+        </div> --> 
+        
         <!-- First Row -->
         <div class="form-grid">
           <nz-form-item>
             <label>First Name</label>
-            <input type="text" placeholder="Enter your legal first name">
+            <input type="text" name="firstName" [(ngModel)]="registerData.firstName" #firstName="ngModel" placeholder="Enter your legal first name">
           </nz-form-item>
   
           <nz-form-item>
             <label>Last Name</label>
-            <input type="text" placeholder="Enter Last Name">
+            <input type="text" name="surname" [(ngModel)]="registerData.surname" placeholder="Enter Last Name">
           </nz-form-item>
         </div>
   
@@ -33,7 +42,7 @@
         <div class="form-grid">
           <nz-form-item>
             <label for="gender">Gender</label>
-            <select name="gender" required>
+            <select name="gender" required [(ngModel)]="registerData.gender" #gender="ngModel">
               <option value="" disabled selected hidden></option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
@@ -43,7 +52,7 @@
   
           <nz-form-item>
             <label>Date of Birth</label>
-            <input type="date" placeholder="Enter Date of Birth">
+            <input type="date" name="dateOfBirth" [(ngModel)]="registerData.dateOfBirth" placeholder="Enter Date of Birth">
           </nz-form-item>
         </div>
   
@@ -51,17 +60,18 @@
         <div class="form-grid">
           <nz-form-item>
             <label>ID Type</label>
-            <select>
+            <select name="idType" [(ngModel)]="registerData.idType" #idType="ngModel">
               <option disabled selected></option>
               <option value="Passport">Passport</option>
-              <option value="National ID">National ID</option>
+              <option value="Ghana Card">Ghana Card</option>
               <option value="Voter ID">Voter ID</option>
+              <option value="Driver License">Driver's License</option>
             </select>
           </nz-form-item>
   
           <nz-form-item>
             <label>ID Number</label>
-            <input type="text" placeholder="Enter ID Number">
+            <input type="text" name="idNumber" [(ngModel)]="registerData.idNumber" #idNumber="ngModel" placeholder="Enter ID Number">
           </nz-form-item>
         </div>
   
@@ -69,28 +79,45 @@
         <div class="form-grid">
           <nz-form-item>
             <label>Email</label>
-            <input type="email" placeholder="Enter Email">
+            <input type="email" name="email" [(ngModel)]="registerData.email" #email="ngModel" placeholder="Enter Email">
           </nz-form-item>
   
           <nz-form-item>
             <label>Phone Number</label>
-            <input type="text" placeholder="Enter Phone Number">
+            <input type="text" name="phoneNumber" [(ngModel)]="registerData.phoneNumber" #phoneNumber="ngModel" placeholder="Enter Phone Number">
           </nz-form-item>
         </div>
-      </form>
-    </div>
-  
-    <!-- Checkbox -->
-    <div class="terms-check">
+
+        <div class="form-grid">
+          <nz-form-item>
+            <label for="">Date Created</label>
+            <input type="date" name="dateOfRegistration" [(ngModel)]="registerData.dateOfRegistration" #dateOfRegistration="ngModel">
+          </nz-form-item>
+        </div>
+        <div>
+          <nz-form-item>
+            <input type="file" id="imageUrl" name="imageUrl" [(ngModel)]="registerData.imageUrl" (change)="onFileSelected($event)"/>
+          </nz-form-item>
+        </div>
+        <!-- Checkbox -->
+    <!-- <div class="terms-check">
       <label nz-checkbox class="check-box"></label>
       <span class="terms-text">
         I agree to <span class="highlighted">terms and conditions</span>
       </span>
-    </div>
+    </div> -->
   
     <!-- Submit Button -->
     <div class="submit-btn-container">
-      <button nz-button class="submit-btn">Continue</button>
+      <button type="submit" nz-button class="submit-btn">Continue</button>
     </div>
+      </form>
+    </div>
+  
+    
+    
   </section>
+  <!-- <router-outlet></router-outlet> -->
+
+
   

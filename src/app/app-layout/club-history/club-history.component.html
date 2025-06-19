@@ -1,0 +1,55 @@
+<section>
+    <!-- Back Icon -->
+    <div class="back-icon">
+        <a class="back-btn" [routerLink]="['/registration']">
+          <img src="../../../assets/images/arrow.svg" class="icon">
+        </a>
+        <p class="back-text">Back</p>
+      </div>
+
+      <div class="form-container">
+        <div class="text-center">
+            <h1><strong>Register to Secure Your Spot</strong></h1>
+            <p>Limited spaces available. Start your booking now.</p>
+          </div>
+
+          <form class="form-body" nzForm #registerForm="ngForm" (ngSubmit)="submit(registerForm)">
+            <div class="club">
+              <nz-form-item>
+                <label>Club Name</label>
+                <input
+                  type="text"
+                  name="clubName"
+                  [(ngModel)]="registerData.presentClub.name"
+                  placeholder="Enter Club Name"
+                />
+              </nz-form-item>
+            </div>
+          
+            <div class="form-grid">
+              <nz-form-item>
+                <label>From Date</label>
+                <input
+                  type="date"
+                  name="fromDate"
+                  [(ngModel)]="registerData.presentClub.fromDate"
+                />
+              </nz-form-item>
+          
+              <nz-form-item>
+                <label>To Date</label>
+                <input
+                  type="date"
+                  name="toDate"
+                  [(ngModel)]="registerData.presentClub.toDate"
+                />
+              </nz-form-item>
+            </div>
+          
+            <div class="submit-btn-container">
+              <button type="submit" nz-button class="submit-btn">Done</button>
+            </div>
+          </form>
+          
+      </div>
+</section>
