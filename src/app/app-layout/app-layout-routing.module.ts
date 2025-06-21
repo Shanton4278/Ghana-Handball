@@ -8,20 +8,20 @@ import { ClubHistoryComponent } from './club-history/club-history.component';
 import { SuccessPageComponent } from './success-page/success-page.component';
 
 const routes: Routes = [
-  
-  {path: '', component: LayoutComponent,
+  {
+    path: '',
+    component: LayoutComponent,
     children: [
-      {path: '', redirectTo: 'home', pathMatch: 'full'},
-      {path: 'divisions', component: DivisionsComponent},
-      {path: 'home', component: HomepageComponent},
-      {path: 'registration', component:RegistrationComponent},
-      {path: 'registration/step-2', component: ClubHistoryComponent},
-      {path: 'success', component: SuccessPageComponent},
-      {path: '',redirectTo: 'home', pathMatch: 'full'},
-    ]},
-    { path: '**', redirectTo: 'home' } 
-  
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'home', component: HomepageComponent },
+      { path: 'divisions', component: DivisionsComponent },
+      { path: 'registration', component: RegistrationComponent },
+      { path: 'registration/step-2', component: ClubHistoryComponent },
+      { path: 'success', component: SuccessPageComponent }
+    ]
+  },
 ];
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

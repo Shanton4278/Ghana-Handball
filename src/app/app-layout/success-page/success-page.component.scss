@@ -1,11 +1,13 @@
 .success-container {
     display: flex;
+    gap: 3rem;
     justify-content: center;
     align-items: center;
     height: 100vh;
     text-align: center;
     background-color: #f6ffed;
-    padding-bottom: 30%;
+    padding-bottom: 27%;
+    font-family: "Outfit", sans-serif;
   }
   
 //   .success-box {
@@ -18,11 +20,19 @@
 //   }
   
   .success-icon {
-    width: 24px;
-    height: 24px;
-    margin-bottom: 1rem;
+    width: 20px;
+    height: 20px;
+  }
+  .success-check {
+    width: 30px;
+    height: 30px;
     background-color: #389e0d;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 45%;
+    margin-top: 90px;
   }
   
   .success-title {
@@ -30,6 +40,7 @@
     font-weight: 600;
     color: #389e0d;
     margin-bottom: 0.5rem;
+    padding-top: 40px;
   }
   
   .success-message {
@@ -44,5 +55,7 @@
     color: white;
     border-radius: 20px;
     padding: 2px;
+    height: 40px;
+    width: 200px;
   }
   

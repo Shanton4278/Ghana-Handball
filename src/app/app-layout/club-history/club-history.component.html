@@ -14,6 +14,44 @@
           </div>
 
           <form class="form-body" nzForm #registerForm="ngForm" (ngSubmit)="submit(registerForm)">
+            <div style="font-size: medium; font-weight: 600;">Former Club</div>
+            
+            <div *ngFor="let club of registerData.formerClubs; let i = index">
+              <div class="club">
+                <nz-form-item>
+                  <label>Club Name</label>
+                  <input
+                    type="text"
+                    name="formerClubName{{i}}"
+                    [(ngModel)]="club.name"
+                    placeholder="Enter Club Name"
+                  />
+                </nz-form-item>
+              </div>
+            
+              <div class="form-grid">
+                <nz-form-item>
+                  <label>From Date</label>
+                  <input
+                    type="date"
+                    name="formerFromDate{{i}}"
+                    [(ngModel)]="club.fromDate"
+                  />
+                </nz-form-item>
+            
+                <nz-form-item>
+                  <label>To Date</label>
+                  <input
+                    type="date"
+                    name="formerToDate{{i}}"
+                    [(ngModel)]="club.toDate"
+                  />
+                </nz-form-item>
+              </div>
+            </div>
+            
+          
+            <div style="font-size: medium; font-weight: 600;">Present Club</div>
             <div class="club">
               <nz-form-item>
                 <label>Club Name</label>
@@ -45,7 +83,6 @@
                 />
               </nz-form-item>
             </div>
-          
             <div class="submit-btn-container">
               <button type="submit" nz-button class="submit-btn">Done</button>
             </div>

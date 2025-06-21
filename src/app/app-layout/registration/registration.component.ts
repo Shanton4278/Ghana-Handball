@@ -6,112 +6,87 @@ import { FormsModule, NgModel } from '@angular/forms';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { RegistrationService } from '../../services/registration.service';
 import { registerModel } from '../../models/registration.model';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-registration',
-  imports: [RouterModule,NzFormModule, FormsModule,NzCheckboxModule],
+  imports: [RouterModule,NzFormModule, FormsModule,NzCheckboxModule,CommonModule],
   templateUrl: './registration.component.html',
   styleUrl: './registration.component.scss'
 })
 export class RegistrationComponent {
 
 constructor(private router: Router, private registrationService : RegistrationService) {
-  this.registerData = new registerModel()
 }
 
-registerData : registerModel = new registerModel()
+// registerData!: registerModel;
 selectedDivision!: string;
-
+registerData: registerModel = new registerModel();
 
 selectDivision(division: string) {
-  this.selectedDivision = division;
   this.registrationService.setSelectedDivision(division);
+  console.log('Selected Division:', division);
 }
-
-
-//   saveAndContinue(form: NgForm) {
-//     if (form.valid) {
-//       this.registerData.division = this.selectedDivision;
-//       const payload = this.registrationService.getRegistrationPayload();
-// const division = payload.division; 
-// console.log('Division:', division);
-//       this.registrationService.setSelectedDivision(this.selectedDivision);  
-//       this.registrationService.setFormData(this.registerData);
-//       console.log("Payload being sent" , this.registerData)
-//       this.router.navigate(['/registration/step-2']);
-//     }
-//   }
-
-// saveAndContinue(form: NgForm) {
-//   if (form.valid) {
-//     // 1. Update registerData with form values
-//     this.registerData = { ...this.registerData, ...form.value };
-    
-//     // 2. Explicitly set the division (ensures it doesn't get overwritten)
-//     this.registerData.division = this.selectedDivision;
-    
-//     // 3. Send to service (now includes division)
-//     this.registrationService.setFormData(this.registerData);
-    
-//     console.log("Final Payload with Division:", this.registerData);
-//     this.router.navigate(['/registration/step-2']);
-//   }
-// }
 
 saveAndContinue(form: NgForm) {
-  if (form.valid) {
-    // Get the latest data from service first
-    const currentPayload = this.registrationService.getRegistrationPayload();
-    
-    // Update with form values while preserving division
-    this.registerData = {
-      ...currentPayload,      // Gets division from service
-      ...form.value,         // Form fields
-      division: this.selectedDivision || currentPayload.division // Ensures division stays
-    };
-    
-    // Send to service
-    this.registrationService.setFormData(this.registerData);
-    
-    console.log("Final Payload:", this.registerData);
-    this.router.navigate(['/registration/step-2']);
+  const selectedDivision = this.selectedDivision || this.registrationService.getFormData().division;
+  console.log('Confirm division from service:', this.registrationService.getFormData().division);
+
+  if (this.imageUploading) {
+    alert("Please wait, image is still uploading...");
+    return;
   }
+
+  if (!this.registerData.imageUrl) {
+    alert("Please upload an image before continuing.");
+    return;
+  }
+
+  const payload: registerModel = {
+    ...form.value,
+    division: selectedDivision,
+    imageUrl: this.registerData.imageUrl,
+  };
+
+  console.log('Payload before CONTINUE:', payload);
+
+  if (!payload.division) {
+    alert('Please select a division before continuing.');
+    return;
+  }
+
+  this.registrationService.setFormData(payload);
+  this.router.navigate(['/registration/step-2']);
 }
 
-  imagePreview: string | ArrayBuffer | null = null;
 
-// onFileSelected(event: any): void {
-//   const file = event.target.files[0];
-//   if (file) {
-//     const reader = new FileReader();
-//     reader.onload = () => {
-//       this.imagePreview = reader.result;
-//     };
-//     reader.readAsDataURL(file);
-//   }
-// }
-
-onFileSelected(event: Event) {
-  const input = event.target as HTMLInputElement;
-
-  if (input.files && input.files[0]) {
-    const file = input.files[0];
+imageUploading = false;
+onFileSelected(event: any) {
+  const file = event.target.files[0];
+  if (file) {
+    this.imageUploading = true;
     const formData = new FormData();
     formData.append('file', file);
 
     this.registrationService.uploadImage(formData).subscribe({
       next: (response) => {
-        console.log('Upload response:', response);
-        this.registerData.imageUrl = response.imageUrl
-        console.log('Image uploaded successfully:', this.registerData.imageUrl);
+        console.log("Upload Response:", response); 
+        this.registerData.imageUrl = response.url;
+        console.log("Set image URL in registerData:", this.registerData.imageUrl);
+        this.imageUploading = false;
+        console.log('Image uploaded:', this.registerData.imageUrl);
       },
       error: (err) => {
+        this.imageUploading = false;
         console.error('Image upload failed:', err);
       }
-    });  
+    });
   }
 }
 
-
+// Optional: helps check if string is a URL to an image
+isUrlImage(url: string): boolean {
+  return url.startsWith('http://') || url.startsWith('https://');
+}
 
 }

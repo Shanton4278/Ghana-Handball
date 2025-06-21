@@ -3,14 +3,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 70px;
+    padding-top: 40px;
+    // font-family: "Outfit", sans-serif;
   }
   
   .back-icon {
     display: flex;
     padding-left: 50px;
-    padding-top: 20px;
     gap: 0.5rem;
+    margin-bottom: 20px;
   }
   
   @media (min-width: 768px) {
@@ -26,6 +27,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    cursor: pointer; 
+  }
+
+  .back-button:hover {
+    background-color: #f3f4f6; /* Light gray background on hover */
+    // border-color: #9ca3af; /* Slightly darker border on hover */
+    transform: scale(1.05); /* Slightly enlarges the button */
   }
   
   .icon {
@@ -41,6 +50,7 @@
   .intro-text {
     margin: auto;
     text-align: center;
+    padding-top: 20px;
   }
   
   .intro-text h1 {
@@ -66,7 +76,7 @@
     margin: auto;
     display: flex;
     gap: 1rem;
-    padding-top: 20px;
+    padding-top: 40px;
   }
 
 
@@ -184,6 +194,13 @@
     border-radius: 7px;
     font-size: 10px;
     border: none;
+    cursor: pointer;
+    transition: all ease 0.3s;
+  }
+  .next-button:hover {
+    // background-color: white;
+    // color: black;
+    transform: scale(1.05);
   }
   
   @media (min-width: 768px) {

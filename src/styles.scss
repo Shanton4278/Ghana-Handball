@@ -3,18 +3,29 @@
 @tailwind components;
 @tailwind utilities;
 
-.reg-container{
+// .reg-container{
+//   background-image:
+//    url('../src/assets/images/ladies.svg');
+//   background-repeat: no-repeat no-repeat;
+//   background-position: bottom, top;
+//   background-size: auto;
+//   height: 93.5vh;
+//   height: 93.5vh;
+//   font-family: "Bricolage Grotesque", sans-serif;
+//     font-weight: 800;
+//     margin: 0;
+//   padding: 0;
+// }
+
+.bg-home{
   background-image:
    url('../src/assets/images/ladies.svg');
-  background-repeat: no-repeat no-repeat;
-  background-position: bottom, top;
+  background-repeat: no-repeat;
+  background-position: bottom;
   background-size: auto;
-  height: 93.5vh;
   height: 93.5vh;
   font-family: "Bricolage Grotesque", sans-serif;
     font-weight: 800;
-    margin: 0;
-  padding: 0;
 }
 
 .outfit {

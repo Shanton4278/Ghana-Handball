@@ -3,7 +3,7 @@ export class registerModel {
   surname: string = '';
   dateOfBirth: Date | null = null;
   imageUrl: string = '';
-  division?: string ;
+  division?: string = '';
   dateOfRegistration: Date | null = null;
   gender: string = '';
   email: string = '';
@@ -58,11 +58,11 @@ export interface registerResponseModel{
   }
 
   export class mediaModel{
-    imageUrl!: string
+    url!: string
   }
 
   export interface mediaResponseModel{
-      imageUrl: string
+      url: string
     }
     
 
