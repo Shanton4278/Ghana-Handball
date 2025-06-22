@@ -1,14 +1,18 @@
 .main {
+    height: 120vh;
+    font-family: "Outfit", sans-serif;
+    background-color: white;
+    
+  }
+  .main-content{
     display: flex;
     flex-direction: column;
-    height: 120vh;
-    padding-bottom: 30px;
-    font-family: "Outfit", sans-serif;
+    background-color: white;
   }
   
   .back-icon {
     display: flex;
-    padding-left: 50px;
+    padding-left: 70px;
     padding-top: 40px;
     gap: 0.5rem;
   }

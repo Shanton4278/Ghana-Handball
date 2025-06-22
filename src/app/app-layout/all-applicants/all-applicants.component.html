@@ -1,0 +1,122 @@
+<section class="all">
+    <div class="inner">
+    <nz-layout class="custom-layout">
+      <!-- Sidebar with vertical tabs -->
+      <nz-sider [nzWidth]="200" class="white-sider">
+        <div class="logo">My App</div>
+        <ul nz-menu nzMode="inline">
+          <div nz-menu-item (click)="selectedTab = 'table'" nzKey="table">
+            Applicants
+          </div>
+          <li nz-menu-item  (click)="selectedTab = 'another'" nzKey="another">
+            Another Tab
+          </li>
+        </ul>
+      </nz-sider>
+  
+      <!-- <nz-layout> -->
+        <nz-content class="custom-content">
+        <div style="display: flex; flex-direction: column;" class="right-side">
+        <div>
+            <div class="card-container">
+                <!-- Card 1 -->
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">Total 1 applicants</h3>
+                  </div>
+                  <div class="card-value">100</div>
+                  
+                </div>
+              
+                <!-- Card 2 -->
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">Division 1 applicants</h3>
+                  </div>
+                  <div class="card-value">50</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                      <h3 class="card-title">Division 2 applicants</h3>
+                    </div>
+                    <div class="card-value">50</div>
+                  </div>
+            </div>              
+        </div>
+
+            <!-- SEARCH     SEARCH      SEARCH  -->
+            <div class="search-wrapper">
+                <img src="../../../assets/images/fi-search.svg" alt="Search Icon" class="search-icon" />
+                <input
+                  type="text"
+                  name="searchUnit"
+                  id="searchUnit"
+                  placeholder="Search Unit"
+                  class="search-input"
+                />
+              </div>
+              
+        
+          <ng-container *ngIf="selectedTab === 'table'">
+            <nz-table [nzData]="listOfData" [nzSize]="'middle'" [nzScroll]="{ y: '370px' }">
+              <thead style="background-color: white;">
+                <tr >
+                <th style="color: #727A90;" nzWidth="200px">Applicant ID</th>
+                  <th style="color: #727A90;">Full Name</th>
+                  <th style="color: #727A90;">Division Type</th>
+                  <th style="color: #727A90;">Gender</th>
+                  <th style="color: #727A90;">Date Registered</th>
+                </tr>
+              </thead>
+              <tbody style="color: #7D7D7D">
+                <tr *ngFor="let data of listOfData" style="height: 62px;">
+                  <td>{{ data }}</td>
+                  <td>
+                    <div>{{ data.firstName + ' ' + data.surname }}</div>
+                    <div style="color: #6B7280; font-size: 12px;">{{data.email}}</div>
+                </td>
+                  <td>{{ formatDivision(data.division) }}</td>
+                  <td>{{ data.gender }}</td>
+                  <td>{{ formatDate(data.dateOfRegistration) }}</td>          
+                  <!-- <td>{{data}}</td> -->
+
+                </tr>
+              </tbody>
+            </nz-table>
+            <div class="pagination-container">
+                <div class="pagination-info">
+                  Showing {{ getStartItem() }} to {{ getEndItem() }} of {{ totalItems }} items
+              
+                  <div class="items-per-page">
+                    Choose Number of Items:
+                    <select id="pageSize" [(ngModel)]="pageSize" (change)="onPageSizeChange()" class="select-box">
+                      <option *ngFor="let size of pageSizeOptions" [value]="size">{{ size }}</option>
+                    </select>
+                  </div>
+                </div>
+              
+                <div class="pagination-controls">
+                  <nz-pagination 
+                    [nzPageIndex]="page"
+                    [nzPageSize]="pageSize"
+                    [nzTotal]="totalItems"
+                    (nzPageIndexChange)="onPageChange($event)">
+                  </nz-pagination>
+                </div>
+              </div>
+              
+          </ng-container>
+  
+          <ng-container *ngIf="selectedTab === 'another'">
+            <p>Another tab's content goes here.</p>
+          </ng-container>
+        
+      <!-- </nz-layout> -->
+    </div>
+</nz-content>
+    </nz-layout> 
+</div>
+    <!-- </div> -->
+  </section>
+  

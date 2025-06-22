@@ -1,0 +1,225 @@
+.all{
+    background-color: white;
+    height: 120vh;
+    font-family: "Outfit", sans-serif;
+}
+.white-sider{
+    background-color: white;
+    border: solid gray 1px;
+}
+
+.custom-layout {
+    min-height: 100vh;
+  }
+  
+  .custom-content {
+    padding: 24px;
+    background-color: #F9F9FC;
+  }
+
+.inner{
+    height: 130vh;
+    // background-color: red;
+}
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  @media (min-width: 768px) {
+    .card-container {
+      flex-direction: row;
+      gap: 34px;
+    }
+  }
+  
+  .card {
+    width: 80px;
+    height: 20px;
+    border: 1px solid #DCDEE3;
+    border-radius: 15px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+  }
+  
+  @media (min-width: 768px) {
+    .card {
+      width: 303px;
+      height: 130px;
+    }
+  }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .card-title {
+    padding-top: 11px;
+    color: #0C0D0F;
+    font-size: 12px;
+  }
+  
+  @media (min-width: 768px) {
+    .card-title {
+      font-size: 16px;
+    }
+  }
+  
+  .card-value {
+    color: #24282E;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  @media (min-width: 768px) {
+    .card-value {
+      font-size: 27px;
+    }
+  }
+
+  .right-side{
+    // background-color: yellow;
+    // padding: 10px;
+    padding-top: 30px;
+    width: auto;
+  }
+
+  .search-wrapper {
+    display: flex;
+    justify-content: end;
+    width: 200px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #d1d5db; 
+    padding-left: 8px;
+    margin-top: 40px;
+    border-radius: 10px;
+    background-color: white;
+    color: #9ca3af; 
+    margin-left: 68%;
+  }
+  
+  @media (min-width: 768px) {
+    .search-wrapper {
+      width: 370px;
+      padding-left: 16px;
+    }
+  }
+  
+  .search-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    background-color: white;
+  }
+  
+  .search-input {
+    width: 95%;
+    border: none;
+    outline: none;
+    padding: 4px;
+    font-size: 12px;
+    background-color: white;
+  }
+  
+  @media (min-width: 768px) {
+    .search-input {
+      font-size: 16px;
+    }
+  }
+  
+  .pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding: 8px;
+    flex-wrap: wrap;
+  }
+  
+  .pagination-info {
+    display: flex;
+    gap: 30px;
+    font-size: 10px;
+    width: 60%;
+  }
+  
+  @media (min-width: 768px) {
+    .pagination-info {
+      width: 100%;
+      font-size: 14px;
+    }
+  
+    .items-per-page {
+      display: flex;
+      align-items: center;
+      width: 300px;
+    }
+  }
+  
+  .items-per-page {
+    display: none;
+  }
+  
+  @media (min-width: 768px) {
+    .items-per-page {
+      display: flex;
+    }
+  }
+  
+  .select-box {
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+  
+  @media (min-width: 768px) {
+    .select-box {
+      font-size: 14px;
+    }
+  }
+  
+  .pagination-controls {
+    display: flex;
+    justify-content: flex-end;
+    width: 78%;
+  }
+  
+  @media (min-width: 768px) {
+    .pagination-controls {
+      width: 38%;
+    }
+  }
+  
+  ::ng-deep .ant-pagination-item {
+    border-radius: 20%;
+    background-color: white;       
+    border: 1px solid black;        
+    color: black !important;       
+  }
+  
+  ::ng-deep .ant-pagination-item-active {
+    background-color: white !important;
+    border: 1px solid black !important;
+    color: black !important;
+  }
+  
+  ::ng-deep .ant-pagination-item > a {
+    color: black !important; 
+  }
+  
+  ::ng-deep .ant-pagination-item-active > a {
+    color: black !important; 
+  }
+
+  

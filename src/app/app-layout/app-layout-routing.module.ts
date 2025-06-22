@@ -6,6 +6,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { ClubHistoryComponent } from './club-history/club-history.component';
 import { SuccessPageComponent } from './success-page/success-page.component';
+import { AllApplicantsComponent } from './all-applicants/all-applicants.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,8 @@ const routes: Routes = [
       { path: 'divisions', component: DivisionsComponent },
       { path: 'registration', component: RegistrationComponent },
       { path: 'registration/step-2', component: ClubHistoryComponent },
-      { path: 'success', component: SuccessPageComponent }
+      { path: 'success', component: SuccessPageComponent },
+      {path: 'all', component: AllApplicantsComponent},
     ]
   },
 ];

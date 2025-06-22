@@ -1,4 +1,5 @@
 <section class="main">
+  <div class="main-content">
     <!-- Back Icon -->
     <div class="back-icon">
       <a class="back-btn" [routerLink]="['/divisions']">
@@ -85,8 +86,7 @@
             <label for="">Date Created</label>
             <input type="date" name="dateOfRegistration" [(ngModel)]="registerData.dateOfRegistration" #dateOfRegistration="ngModel">
           </nz-form-item>
-        </div>
-        <div>
+
           <nz-form-item>
             <label style="font-weight: 600; font-size: medium;">Upload Profile Picture</label>
             <input 
@@ -97,22 +97,19 @@
               accept="image/*"
             />
           </nz-form-item>
+        </div>
+        <div *ngIf="imageUploading" style="color: gray; font-size: 14px; margin-left: 51%;">
+          ⏳ Image uploading... Please wait
+        </div>
+        
         
           <!-- Show preview or uploaded image name -->
-          <div *ngIf="registerData.imageUrl" class="mt-2">
+          <!-- <div *ngIf="registerData.imageUrl" class="mt-2">
             <p><strong>Uploaded Image:</strong></p>
             <img [src]="registerData.imageUrl" alt="Uploaded image" width="100" *ngIf="isUrlImage(registerData.imageUrl)" />
             <p *ngIf="!isUrlImage(registerData.imageUrl)">{{ registerData.imageUrl }}</p>
-          </div>
-        </div>
+          </div> -->
         
-        <!-- Checkbox -->
-    <!-- <div class="terms-check">
-      <label nz-checkbox class="check-box"></label>
-      <span class="terms-text">
-        I agree to <span class="highlighted">terms and conditions</span>
-      </span>
-    </div> -->
   
     <!-- Submit Button -->
     <div class="submit-btn-container">
@@ -120,7 +117,7 @@
     </div>
       </form>
     </div>
-  
+  </div>
     
     
   </section>

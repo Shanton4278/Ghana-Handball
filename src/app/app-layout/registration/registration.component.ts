@@ -7,10 +7,11 @@ import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { RegistrationService } from '../../services/registration.service';
 import { registerModel } from '../../models/registration.model';
 import { CommonModule } from '@angular/common';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
 
 @Component({
   selector: 'app-registration',
-  imports: [RouterModule,NzFormModule, FormsModule,NzCheckboxModule,CommonModule],
+  imports: [RouterModule,NzFormModule, FormsModule,NzCheckboxModule,CommonModule,NzAlertModule],
   templateUrl: './registration.component.html',
   styleUrl: './registration.component.scss'
 })
@@ -36,53 +37,50 @@ saveAndContinue(form: NgForm) {
     alert("Please wait, image is still uploading...");
     return;
   }
-
   if (!this.registerData.imageUrl) {
     alert("Please upload an image before continuing.");
     return;
   }
-
   const payload: registerModel = {
+    ...this.registerData,
     ...form.value,
     division: selectedDivision,
     imageUrl: this.registerData.imageUrl,
   };
-
   console.log('Payload before CONTINUE:', payload);
-
   if (!payload.division) {
     alert('Please select a division before continuing.');
     return;
   }
-
   this.registrationService.setFormData(payload);
   this.router.navigate(['/registration/step-2']);
 }
 
 
 imageUploading = false;
+
 onFileSelected(event: any) {
   const file = event.target.files[0];
+
   if (file) {
-    this.imageUploading = true;
+    this.imageUploading = true; 
     const formData = new FormData();
     formData.append('file', file);
 
     this.registrationService.uploadImage(formData).subscribe({
       next: (response) => {
-        console.log("Upload Response:", response); 
         this.registerData.imageUrl = response.url;
-        console.log("Set image URL in registerData:", this.registerData.imageUrl);
-        this.imageUploading = false;
-        console.log('Image uploaded:', this.registerData.imageUrl);
+        alert('Image Uploaded Successfully');
+        this.imageUploading = false; 
       },
       error: (err) => {
-        this.imageUploading = false;
+        this.imageUploading = false; 
         console.error('Image upload failed:', err);
       }
     });
   }
 }
+
 
 // Optional: helps check if string is a URL to an image
 isUrlImage(url: string): boolean {
