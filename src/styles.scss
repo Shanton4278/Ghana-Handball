@@ -17,16 +17,19 @@
 //   padding: 0;
 // }
 
-.bg-home{
-  background-image:
-   url('../src/assets/images/ladies.svg');
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: auto;
-  height: 93.5vh;
-  font-family: "Bricolage Grotesque", sans-serif;
-    font-weight: 800;
-}
+// .bg-home{
+  // background-color: red;
+  // background-image:
+  //  url('../src/assets/images/ladies.svg');
+  // background-repeat: no-repeat;
+  // background-position: bottom;
+  // background-size: cover;
+  // height: 93.5vh;
+  // width: 100vw;
+  // font-family: "Bricolage Grotesque", sans-serif;
+  // font-weight: 800;
+  // background: linear-gradient(to right, green, yellow);
+// }
 
 .outfit {
     font-family: "Outfit", sans-serif;
@@ -43,4 +46,15 @@
     font-style: normal;
     font-variation-settings:
       "wdth" 100;
+  }
+  body{
+    // background: linear-gradient(to right, green, yellow, red);
+    background-image:
+   url('../src/assets/images/ladies.svg');
+  background-repeat: no-repeat;
+  // background-position: bottom;
+  background-size: cover;
+  // height: 93.5vh;
+  // width: 100vw;
+  // font-weight: 800;
   }

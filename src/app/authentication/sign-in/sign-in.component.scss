@@ -1,0 +1,167 @@
+.main-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100vw;
+    background-color: white;
+  }
+  
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+    margin: auto;
+    border-radius: 10px;
+    padding-bottom: 150px;
+  }
+  
+  .logo-section {
+    text-align: center;
+  }
+  
+  .logo-wrapper {
+    // background: white;
+    width: 53px;
+    height: 54px;
+    // border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  
+  .logo-img {
+    display: block;
+    margin: auto;
+  }
+  
+  .title {
+    font-size: 22px;
+    font-weight: 400;
+  }
+  
+  .subtitle {
+    color: #7C7C7C;
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  
+  .form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .form-item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .label {
+    margin-bottom: 0.25rem;
+    font-size: 14px;
+    color: #1E1E1C;
+  }
+  
+  .input-field {
+    border: 1px solid #DADADA;
+    background-color: #FFFFFF;
+    padding: 0.5rem;
+    border-radius: 10px;
+    color: black;
+    height: 45px;
+    width: 100%;
+  }
+  
+  .password-wrapper {
+    position: relative;
+  }
+  
+  .toggle-password-btn {
+    position: absolute;
+    top: 50%;
+    right: 0.75rem;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+  }
+  
+  .options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #7C7C7C;
+    margin-top: 0.5rem;
+  }
+  
+  .forgot-password {
+    color: #1E1E1E;
+    text-decoration: none;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  
+//   .azure-login {
+//     margin-top: 1rem;
+//     background: transparent;
+//     border: 1px solid #ccc;
+//     padding: 0.5rem;
+//     border-radius: 8px;
+//     cursor: pointer;
+//   }
+  
+  .submit-section {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    background-color: #1E1E1E;
+    color: white;
+    padding: 0.5rem;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    height: 45px;
+    cursor: pointer;
+  }
+  
+  .spinner {
+    margin: 0 auto;
+    margin-top: 0.5rem;
+  }
+
+  .toggle-password {
+    position: absolute;
+    right: 0.75rem; /* ~12px */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #4B5563; 
+    padding-top: 23px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .icon-img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  

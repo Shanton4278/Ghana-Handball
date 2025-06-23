@@ -219,6 +219,34 @@
       color: #555;
       text-decoration: underline;
     }
+
+    .image-preview-container {
+      position: relative;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    
+    .uploaded-image {
+      width: 120px;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    
+    .remove-btn {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: red;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
     
   }
   

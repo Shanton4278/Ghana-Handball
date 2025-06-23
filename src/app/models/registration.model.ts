@@ -19,12 +19,20 @@ export class registerModel {
     fromDate: null,
     toDate: null
   };
+
   formerClubs: Array<{
     name: string;
-    fromDate: Date;
-    toDate: Date;
-  }> = [];
-       }
+    fromDate: string;
+    toDate: string;
+  }>;
+
+  constructor() {
+    this.formerClubs = [
+      { name: '', fromDate: '', toDate: '' }
+    ];
+  }
+}
+
       
 
 export interface registerResponseModel{
@@ -64,6 +72,57 @@ export interface registerResponseModel{
   export interface mediaResponseModel{
       url: string
     }
+
+  export class getApplicantsModel{
+    search!: string
+      page!:number
+      pageSize!:number
+  }
+  export interface getApplicantsResponseModel{
+      message: string
+      data: Data[]
+      pagination: Pagination
+    }
+    
+    export interface Data {
+      _id: string
+      division: string
+      imageUrl: string
+      firstName: string
+      phoneNumber: string
+      surname: string
+      email: string
+    gender: string
+      dateOfRegistration: string
+      dateOfBirth: string
+      presentClub: PresentClub
+      formerClubs: FormerClub[]
+      idType: string
+      idNumber: string
+      createdAt: string
+      updatedAt: string
+      __v: number
+    }
+    
+    export interface PresentClub {
+      name: string
+      fromDate: string
+      toDate: string
+    }
+    
+    export interface FormerClub {
+      name: string
+      fromDate: string
+      toDate: string
+    }
+    
+    export interface Pagination {
+      total: number
+      page: string
+      pageSize: string
+      totalPages: number
+    }
+
     
 
       

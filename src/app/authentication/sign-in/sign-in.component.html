@@ -1,0 +1,47 @@
+<section class="main-section">
+    <div class="form-container">
+      
+      <div class="logo-section">
+        <div class="logo-wrapper">
+          <img src="../../../assets/images/hdlogo.svg" class="logo-img">
+        </div>
+        <h1 class="title"><strong>Log In To Your Account</strong></h1>
+        <p class="subtitle">Enter your email and password</p>
+      </div>
+  
+      <form class="form" #signinform="ngForm" (ngSubmit)="submit(signinform)" nzform>
+        <nz-form-item class="form-item">
+          <label for="email" class="label">Email</label>
+          <input nz-input type="email" name="email" [(ngModel)]="signInData.email" required placeholder="email@gmail.com" class="input-field">
+        </nz-form-item>
+  
+        <nz-form-item class="form-item password-wrapper">
+          <label for="password" class="label">Password</label>
+          <input [type]="showPassword ? 'text' : 'password'" required 
+            nz-input name="password" [(ngModel)]="signInData.password" placeholder="**********" class="input-field" />
+          <button type="button" (click)="showPassword = !showPassword" class="toggle-password">
+            <img *ngIf="showPassword" src="../../../assets/images/eyeopen.svg" class="icon-img" />
+            <img *ngIf="!showPassword" src="../../../assets/images/eyeclose.svg" alt="" class="icon-img" />
+          </button>
+          
+        </nz-form-item>
+  
+        <div class="options">
+          <span>
+            <label nz-checkbox></label>
+            Remember me
+          </span>
+          <span><a routerLink="/auth/forgot-password" class="forgot-password">Forgot Password?</a></span>
+        </div>
+  
+        <!-- <button type="button" class="azure-login">Login with Azure</button> -->
+  
+        <div class="submit-section">
+          <button type="submit" [disabled]="signinform.invalid" class="submit-btn">Login</button>
+          <!-- <div><nz-spin nzSimple class="spinner"></nz-spin></div> -->
+        </div>
+      </form>
+  
+    </div>
+  </section>
+  

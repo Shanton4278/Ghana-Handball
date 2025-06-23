@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router,RouterModule } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { NzFormModule } from 'ng-zorro-antd/form';
@@ -20,18 +20,33 @@ export class RegistrationComponent {
 constructor(private router: Router, private registrationService : RegistrationService) {
 }
 
+ngOnInit():void{
+  const savedDivision = localStorage.getItem('selectedDivision');
+  if (savedDivision) {
+    // this.selectedDivision = JSON.parse(savedDivision).division;
+    this.selectedDivision = savedDivision;
+    console.log("selected division arrived", this.selectedDivision)
+    this.registerData.division = this.selectedDivision;
+    console.log("sected from service appeared", this.registerData.division)
+  }
+}
+
 // registerData!: registerModel;
-selectedDivision!: string;
+selectedDivision!: string;  
 registerData: registerModel = new registerModel();
 
 selectDivision(division: string) {
+  console.log('[Component] User selected division:', division);
   this.registrationService.setSelectedDivision(division);
+  this.selectedDivision = division;
   console.log('Selected Division:', division);
 }
 
 saveAndContinue(form: NgForm) {
   const selectedDivision = this.selectedDivision || this.registrationService.getFormData().division;
   console.log('Confirm division from service:', this.registrationService.getFormData().division);
+  console.log("Selected Division:", selectedDivision);
+  console.log("Service Division:", this.registrationService.getFormData().division);
 
   if (this.imageUploading) {
     alert("Please wait, image is still uploading...");
@@ -85,6 +100,14 @@ onFileSelected(event: any) {
 // Optional: helps check if string is a URL to an image
 isUrlImage(url: string): boolean {
   return url.startsWith('http://') || url.startsWith('https://');
+}
+
+removeImage() {
+  this.registerData.imageUrl = '';
+  this.imageUploading = false;
+  const formData = this.registrationService.getFormData();
+  formData.imageUrl = '';
+  this.registrationService.setFormData(formData);
 }
 
 }

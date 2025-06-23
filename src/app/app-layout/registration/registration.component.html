@@ -48,8 +48,21 @@
             <input type="date" name="dateOfBirth" [(ngModel)]="registerData.dateOfBirth" #dateOfBirth="ngModel" placeholder="Enter Date of Birth">
           </nz-form-item>
         </div>
-  
+
         <!-- Third Row -->
+        <div class="form-grid">
+          <nz-form-item>
+            <label>Email</label>
+            <input type="email" name="email" [(ngModel)]="registerData.email" #email="ngModel" placeholder="Enter Email">
+          </nz-form-item>
+  
+          <nz-form-item>
+            <label>Phone Number</label>
+            <input type="text" name="phoneNumber" [(ngModel)]="registerData.phoneNumber" #phoneNumber="ngModel" placeholder="Enter Phone Number">
+          </nz-form-item>
+        </div>
+  
+        <!-- Fourth Row -->
         <div class="form-grid">
           <nz-form-item>
             <label>ID Type</label>
@@ -68,19 +81,6 @@
           </nz-form-item>
         </div>
   
-        <!-- Fourth Row -->
-        <div class="form-grid">
-          <nz-form-item>
-            <label>Email</label>
-            <input type="email" name="email" [(ngModel)]="registerData.email" #email="ngModel" placeholder="Enter Email">
-          </nz-form-item>
-  
-          <nz-form-item>
-            <label>Phone Number</label>
-            <input type="text" name="phoneNumber" [(ngModel)]="registerData.phoneNumber" #phoneNumber="ngModel" placeholder="Enter Phone Number">
-          </nz-form-item>
-        </div>
-
         <div class="form-grid">
           <nz-form-item>
             <label for="">Date Created</label>
@@ -96,6 +96,10 @@
               (change)="onFileSelected($event)"
               accept="image/*"
             />
+            <!-- <div *ngIf="registerData.imageUrl" class="image-preview-container">
+              <button type="button" class="remove-btn" (click)="removeImage()">X</button>
+            </div> -->
+            
           </nz-form-item>
         </div>
         <div *ngIf="imageUploading" style="color: gray; font-size: 14px; margin-left: 51%;">

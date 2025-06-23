@@ -26,5 +26,7 @@ export class DivisionsComponent {
   selectDivision(division: string) {
     this.selectedDivision = division;
     console.log("here is the division", this.selectedDivision)
+    localStorage.setItem('selectedDivision', division); 
+  this.registrationService.setSelectedDivision(division);
 }
 }
