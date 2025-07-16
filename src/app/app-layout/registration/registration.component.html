@@ -11,7 +11,7 @@
     <!-- Form Wrapper -->
     <div class="form-container">
       <div class="text-center">
-        <h1 style="font-size: 18px;"><strong>Register to Secure Your Spot</strong></h1>
+        <h1 style="font-size: 18px; text-align: center;"><strong>Register to Secure Your Spot</strong></h1>
         <p>Limited spaces available. Start your booking now.</p>
       </div>
   
@@ -36,12 +36,27 @@
           <nz-form-item>
             <label for="gender">Gender</label>
             <select name="gender" required [(ngModel)]="registerData.gender" #gender="ngModel">
-              <option value="" disabled selected hidden></option>
+              <option disabled selected></option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
               <option value="Other">Other</option>
             </select>
           </nz-form-item>
+
+          <!-- <nz-form-item>
+            <nz-form-label>Date of Birth</nz-form-label>
+            <nz-form-control>
+              <input 
+                type="date" 
+                name="dateOfBirth" 
+                [(ngModel)]="registerData.dateOfBirth" 
+                #dateOfBirth="ngModel" 
+                placeholder="Enter Date of Birth"
+                class="date-input"
+              />
+            </nz-form-control>
+          </nz-form-item> -->
+          
   
           <nz-form-item>
             <label>Date of Birth</label>
@@ -55,11 +70,18 @@
             <label>Email</label>
             <input type="email" name="email" [(ngModel)]="registerData.email" #email="ngModel" placeholder="Enter Email">
           </nz-form-item>
-  
+
           <nz-form-item>
             <label>Phone Number</label>
-            <input type="text" name="phoneNumber" [(ngModel)]="registerData.phoneNumber" #phoneNumber="ngModel" placeholder="Enter Phone Number">
-          </nz-form-item>
+            <input type="text"  name="phoneNumber" [(ngModel)]="registerData.phoneNumber" #phoneNumber="ngModel"
+              placeholder="Enter Phone Number" required pattern="^(?:\+233|0)(24|25|26|27|50|54|55|56|57|58|59)\d{7}$"
+              nz-input
+            />
+            <div *ngIf="phoneNumber.invalid && phoneNumber.touched">
+              <span *ngIf="phoneNumber.errors?.['required']" style="color: red">Phone number is required.</span>
+              <span *ngIf="phoneNumber.errors?.['pattern']" style="color: red">Enter a valid 10-digit Ghanaian number.</span>
+            </div> 
+          </nz-form-item>          
         </div>
   
         <!-- Fourth Row -->
@@ -117,7 +139,7 @@
   
     <!-- Submit Button -->
     <div class="submit-btn-container">
-      <button type="submit" nz-button class="submit-btn">Continue</button>
+      <button type="submit" nz-button class="submit-btn">SUBMIT</button>
     </div>
       </form>
     </div>

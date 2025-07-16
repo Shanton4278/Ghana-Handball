@@ -16,7 +16,7 @@ import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 
 @Component({
   selector: 'app-all-applicants',
-  imports: [RouterModule,NzTabsModule,FormsModule,NzFormModule,NzTableModule,NzLayoutModule,NgFor,NgIf,
+  imports: [RouterModule,NzTabsModule,FormsModule,NzFormModule,NzTableModule,NzLayoutModule,NgFor,
     CommonModule,NzPaginationModule],
   templateUrl: './all-applicants.component.html',
   styleUrl: './all-applicants.component.scss'
@@ -31,33 +31,21 @@ export class AllApplicantsComponent {
   getApplicantsData!: getApplicantsModel
   page = 1
   pageSize = 10;
-  totalItems = 0;
+  totalItems = 50;
   pageSizeOptions: number[] = [2, 5, 10, 15];
 
   ngOnInit(): void{
     this.allApplicants()
   }
 
-  selectedTab = 'table';
+  // selectedTab = 'table';
   listOfData:any[] = [];
 
-  // listOfData = [
-  //   {
-  //     name: 'John Brown',
-  //     age: 32,
-  //     address: 'New York No. 1 Lake Park',
-  //   },
-  //   {
-  //     name: 'Jim Green',
-  //     age: 42,
-  //     address: 'London No. 1 Lake Park',
-  //   },
-  //   {
-  //     name: 'Joe Black',
-  //     age: 32,
-  //     address: 'Sidney No. 1 Lake Park',
-  //   },
-  // ];
+  selectedTabIndex = 0; 
+
+  selectTab(index: number): void {
+    this.selectedTabIndex = index;
+  }
 
   allApplicants(){
     this.getApplicantsData.page = this.page;
@@ -66,6 +54,7 @@ export class AllApplicantsComponent {
       next: (response)=>{
         this.listOfData = response.data
         console.log("all applicants here", response)
+        this.totalItems = response.pagination.total; 
       },
       error: (error)=>{
         console.log("no applicants", error)
@@ -88,7 +77,7 @@ export class AllApplicantsComponent {
   }
 
   formatDate(dateString: string): string {
-    return dateString.split('T')[0]; // Extracts only the YYYY-MM-DD
+    return dateString.split('T')[0]; 
   }
 
    ////// PAGINATION    /////// PAGINATION

@@ -1,0 +1,57 @@
+section{
+    height: 140vh;
+    background-color: white;
+    padding: 50px;
+}
+.about{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+}
+.about-us{
+    color: red;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+@media (min-width: 768px) {
+    .about-us {
+        font-size: 32px;
+    }
+}
+.overview{
+    color: black;
+    padding-top: 20px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.mission{
+    height: auto;
+    background: #d64c29;
+    background: linear-gradient(90deg, rgba(214, 76, 41, 0.8) 0%, rgba(220, 35, 41, 0.9) 30%, rgba(247, 7, 15, 1) 100%);
+    color: white;
+    text-align: right;
+    font-size: 22px;
+    font-weight: 400;
+    padding: 20px;
+    // border: 1px solid red;
+    border-radius: 20px;   
+}
+
+.vision{
+    height: 30vh;
+    background-color: yellow;
+    color: black;
+    text-align: right;
+    font-size: 22px;
+    font-weight: 400;
+    padding: 20px;
+    border-radius: 20px;   
+}
+.vision-text{
+    font-weight: 500;
+    color: black;
+    font-size: 18px;
+}

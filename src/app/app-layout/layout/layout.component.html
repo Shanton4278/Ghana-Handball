@@ -1,19 +1,19 @@
 
-<div class="header-bar">
+<nav class="header-bar">
     <a [routerLink]="['/home']">
       <img src="../../../assets/images/hdlogo.svg" alt="Logo" class="logo-img">
     </a>
   
     <div class="desktop-nav">
         <div class="nav-link" [routerLink]="'/home'" routerLinkActive="active1">Home</div>
-        <div class="nav-link">About Us</div>
-        <div class="nav-link">Gallery</div>
-        <div class="nav-link">Contact Us</div>
-      </div>
+        <div class="nav-link" [routerLink]="'/about-us'" routerLinkActive="active1">About Us</div>
+        <div class="nav-link" [routerLink]="'/gallery'" routerLinkActive="active1">Gallery</div>
+        <div class="nav-link" [routerLink]="'/contact-us'" routerLinkActive="active1">Contact Us</div>
+    </div>
       
 
     <div class="mobile-nav">
-        <button class="menu-button" nz-dropdown [nzDropdownMenu]="menu">
+        <button class="menu-button" nz-dropdown [nzDropdownMenu]="menu" nzTrigger="click">
           <svg xmlns="http://www.w3.org/2000/svg" class="menu-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M4 6h16M4 12h16M4 18h16" />
@@ -22,10 +22,10 @@
       
         <nz-dropdown-menu #menu="nzDropdownMenu">
           <ul nz-menu nzSelectable>
-            <li nz-menu-item class="dropdown-item">Home</li>
-            <li nz-menu-item class="dropdown-item">About Us</li>
-            <li nz-menu-item class="dropdown-item">Gallery</li>
-            <li nz-menu-item nzDanger class="dropdown-item">Contact Us</li>
+            <li nz-menu-item class="dropdown-item" routerLink="/home" routerLinkActive="active3">Home</li>
+            <li nz-menu-item class="dropdown-item" routerLink="/about-us" routerLinkActive="active3">About Us</li>
+            <li nz-menu-item class="dropdown-item" routerLink="/gallery" routerLinkActive="active3">Gallery</li>
+            <li nz-menu-item nzDanger class="dropdown-item" routerLink="/contact-us" routerLinkActive="active3">Contact Us</li>
           </ul>
         </nz-dropdown-menu>
       </div>
@@ -37,7 +37,7 @@
         <!-- </a> -->
       </div>
       
-</div>
+  </nav>
 <div class="main-container">
     <router-outlet></router-outlet>
   </div>

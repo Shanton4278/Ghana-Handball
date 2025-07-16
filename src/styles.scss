@@ -48,7 +48,6 @@
       "wdth" 100;
   }
   body{
-    // background: linear-gradient(to right, green, yellow, red);
     background-image:
    url('../src/assets/images/ladies.svg');
   background-repeat: no-repeat;
@@ -57,4 +56,15 @@
   // height: 93.5vh;
   // width: 100vw;
   // font-weight: 800;
+  }
+
+  .livvic-light-italic {
+    font-family: "Livvic", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+
+  .mission-text{
+    font-family: "Livvic", sans-serif;
   }

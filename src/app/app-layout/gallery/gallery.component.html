@@ -1,0 +1,9 @@
+<section>
+    <div class="gallery-text">Gallery</div>
+<div class="gallery-grid">
+    <div class="gallery-item" *ngFor="let image of images">
+      <img [src]="image.url" [alt]="image.alt" />
+    </div>
+  </div>
+</section>
+  

@@ -18,7 +18,9 @@
       <!-- 1st Division -->
       <div class="division-card" [class.selected]="selectedDivision === 'Division_One'"
       (click)="selectDivision('Division_One')">
+      <div class="around-icon">
         <img src="../../../assets/images/check.svg"  class="check-icon">
+      </div>
         <img src="../../../assets/images/Frameone.svg" class="division-icon">
         <div class="division-title">1st Division</div>
         <p class="division-desc">Top-tier clubs in the national handball league.</p>
@@ -28,7 +30,9 @@
       <!-- 2nd Division -->
       <div class="division-card" [class.selected]="selectedDivision === 'Division_Two'"
       (click)="selectDivision('Division_Two')">
+      <div class="around-icon">
         <img src="../../../assets/images/check.svg" class="check-icon">
+      </div>
         <img src="../../../assets/images/Frametwo.svg" class="division-icon">
         <div class="division-title">2nd Division</div>
         <p class="division-desc">Regional and rising teams in developmental leagues.</p>
@@ -37,10 +41,24 @@
         Selected Division: {{ selectedDivision }}
       </p> -->
     </div>
-    
+
+      <div style="display: flex; width: 70%; justify-content: center; margin: auto; margin-top: 10px;">
+        <nz-form-item>
+          <label>Team</label>
+          <select [ngModel]="selectedTeam" (ngModelChange)="selectTeam($event)" name="team" [disabled]="!selectedDivision || listOfTeams.length === 0"
+           required >
+          <option disabled [value]="''">Select a team</option>
+
+          <option *ngFor="let team of listOfTeams" [value]="team._id">
+            {{ team.name || team.teamName || team.title }}
+          </option>
+          </select>
+        </nz-form-item>
+      </div>
+      
     <div class="next-button-container">
       <button routerLink="/registration" class="next-button">Next</button>
     </div>
   </div>
-  </div>
+  </div> 
   

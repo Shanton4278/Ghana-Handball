@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppLayoutRoutingModule } from './app-layout-routing.module';
 import { DivisionsComponent } from './divisions/divisions.component';
@@ -10,7 +11,7 @@ import { DivisionsComponent } from './divisions/divisions.component';
   imports: [
     CommonModule,
     AppLayoutRoutingModule,
-    DivisionsComponent,
+    DivisionsComponent
   ]
 })
 export class AppLayoutModule { }

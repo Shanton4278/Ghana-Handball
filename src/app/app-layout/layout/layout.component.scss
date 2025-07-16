@@ -11,18 +11,25 @@
   /* width: 100%; */
 }
 
-.active1{
-  border:1px solid #E5E7F1;
-  border-radius: 30px;
-  background-color: #F5F6FA !important;
-  color: #565656 !important;
-  opacity: 0.5px !important;
-  width: 80px;
-  height: 40px;
+.active1 {
+  border: 1px solid #E5E7F1;
+  border-radius: 10px;
+  background-color: #F5F6FA;
+  color: #565656;
+  width: 110px;
+  height: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+.active1:hover {
+  background-color: #E0E3F0;
+  color: #333;
+  cursor: pointer;
+}
+
 
 .register-container {
     display: none;
@@ -36,24 +43,31 @@
   
   .register-button {
     width: 70px;
-    height: 15px;
+    height: 12px;
     border: 1px solid #6B7280; 
-    border-radius: 30px;
+    border-radius: 18px;
     background-color: #1E1E1E;
     color: #FFFFFF;
     font-size: 12px;
+    cursor: pointer;
+    transition: all ease 0.3s;
+  }
+  .register-button:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.05);
   }
   
   @media (min-width: 768px) {
     .register-button {
       width: 115px;
-      height: 45px;
+      height: 35px;
       font-size: 14px;
     }
   }
   
   /* Hide by default on medium and large screens */
-.mobile-nav {
+  .mobile-nav {
     display: flex;
   }
   
@@ -81,10 +95,22 @@
     background-color: white !important;
     color: #8E8E8E !important;
   }
+  .dropdown-item:hover{
+    color: black;
+  }
 
   /* Show only on medium and large screens */
-.desktop-nav {
+  .desktop-nav {
     display: none;
+  }
+  .desktop-nav :hover{
+    color: #565656;
+    text-decoration: underline;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   @media (min-width: 768px) {
@@ -99,6 +125,8 @@
   
   .nav-link {
     cursor: pointer;
+    font-size: medium;
+    font-weight: 500;
   }
 
   .header-bar {
@@ -109,6 +137,12 @@
     align-items: center;
     padding: 1rem;
     border-bottom: 1px solid #E1E1E1;
+    font-family: "Outfit", sans-serif;
+    position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 1000;
   }
   
   .logo-img {
@@ -131,6 +165,14 @@
       height: 85vh;
     }
   }
+
+  .active3{
+    font-size: 16px;
+    background-color:  rgba(255, 255, 255, 0.215)!important;
+    color:black !important;
+    opacity: 0.5px !important;
+    width: 130px;
+}
   
   
   

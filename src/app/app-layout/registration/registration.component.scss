@@ -1,8 +1,9 @@
 .main {
-    height: 120vh;
+    min-height: 160vh;
     font-family: "Outfit", sans-serif;
     background-color: white;
-    
+    padding-bottom: 50px;  
+    padding-top: 40px; 
   }
   .main-content{
     display: flex;
@@ -12,19 +13,35 @@
   
   .back-icon {
     display: flex;
-    padding-left: 70px;
+    padding-left: 10px;
     padding-top: 40px;
+    padding-bottom: 20px;
+    border: none;
+    // border: solid 1px red;
     gap: 0.5rem;
+    // background-color: yellow;
   }
   
   @media (min-width: 768px) {
     .back-icon {
-      padding-left: 120px;
+      padding-left: 80px;
+      // background-color: red;
     }
   }
   
   .back-btn {
     border: 1px solid gray;
+    border-radius: 50%;
+    padding: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease; 
+    cursor: pointer;
+  }
+  @media (min-width: 768px){
+    .back-btn{
+      border: 1px solid gray;
     border-radius: 50%;
     padding: 0.5rem;
     display: flex;
@@ -32,6 +49,8 @@
     justify-content: center;
     transition: all 0.3s ease; 
     cursor: pointer;
+    }
+    
   }
 
   .back-btn:hover {
@@ -48,7 +67,15 @@
   .back-text {
     padding-top: 7px;
     color: #464040;
+    font-size: 16px;
   }
+  
+  @media (max-width: 640px) {
+    .back-text {
+      display: none;
+    }
+  }
+  
   
   .form-container {
     display: flex;
@@ -66,6 +93,8 @@
     color: #1e1e1c;
     font-size: 15px;
     font-weight: 400;
+    align-items: center;
+    margin: auto;
   }
   
   .text-center p {
@@ -105,21 +134,42 @@
     gap: 0.25rem;
   }
   
+
   nz-form-item label {
     color: #1e1e1c;
     font-size: 15px;
     font-weight: 400;
   }
-  
-  nz-form-item input,
-  nz-form-item select {
-    padding: 0.75rem;
-    border: 1px solid #dadada;
-    background-color: #ffffff;
-    border-radius: 0.5rem;
-    width: 100%;
-    outline: none;
+
+  nz-form-item input[type="date"] {
+    width: 99% !important;
+    min-width: 96% !important;
+    box-sizing: border-box;
   }
+  
+  // nz-form-item input,
+  // nz-form-item select {
+  //   padding: 0.75rem;
+  //   border: 1px solid #dadada;
+  //   background-color: #ffffff;
+  //   border-radius: 0.5rem;
+  //   width: 100%;
+  //   outline: none;
+  // }
+
+  nz-form-item input,
+nz-form-item select {
+  padding: 0.75rem;
+  border: 1px solid #dadada;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  width: 100%;
+  outline: none;
+  height: 45px; 
+  -webkit-appearance: none; 
+  appearance: none;
+}
+
   
   nz-form-item input:focus,
   nz-form-item select:focus {
@@ -174,10 +224,16 @@
     border: none;
     border-radius: 7px;
     font-weight: bold;
-    height: 50px;
-    width: 48%;
+    height: 40px;
+    width: 50%;
     cursor: pointer;
     transition: all ease 0.3s;
+  }
+
+  @media (max-width: 768px) {
+    .submit-btn {
+      height: 40px;
+    }
   }
 
   .submit-btn:hover {
@@ -186,10 +242,7 @@
     transform: scale(1.05);
   }
   
-  @media (max-width: 768px) {
-    .submit-btn {
-      height: 4vh;
-    }
+  
 
     .profile-upload {
       display: flex;
@@ -248,5 +301,5 @@
     }
     
     
-  }
+ 
   

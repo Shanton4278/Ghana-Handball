@@ -4,6 +4,7 @@ export class registerModel {
   dateOfBirth: Date | null = null;
   imageUrl: string = '';
   division?: string = '';
+  team: string = '';
   dateOfRegistration: Date | null = null;
   gender: string = '';
   email: string = '';
@@ -123,6 +124,101 @@ export interface registerResponseModel{
       totalPages: number
     }
 
-    
+    export class teamsModel {
+
+    }
+
+    export interface teamsResponseModel{
+        status: Status
+        data: Data
+      }
+      
+      export interface Status {
+        success: boolean
+        message: string
+        timestamp: string
+      }
+      
+      export interface Data {
+        total: number
+        page: number
+        pageSize: number
+        teams: Team[]
+      }
+      
+      export interface Team {
+        _id: string
+        name: string
+        email: string
+        createdAt: string
+        updatedAt: string
+        __v: number
+      }
+
+      export class divisionOneTeamModel{
+        page!: number;
+        pageSize!: number;
+      }
+
+      export interface divisionOneTeamResponseModel{
+          status: Status
+          data: Data
+        }
+        
+        export interface Status {
+          success: boolean
+          message: string
+          timestamp: string
+        }
+        
+        export interface Data {
+          total: number
+          page: number
+          pageSize: number
+          teams: Team[]
+        }
+        
+        export interface Team {
+          _id: string
+          name: string
+          email: string
+          division: string
+          createdAt: string
+          updatedAt: string
+          __v: number
+        }
+
+        export class divisionTwoTeamModel{
+          page!: number;
+          pageSize!: number;
+        }
+
+        export interface divisionTwoTeamResponseModel{
+            status: Status
+            data: Data
+          }
+          
+          export interface Status {
+            success: boolean
+            message: string
+            timestamp: string
+          }
+          
+          export interface Data {
+            total: number
+            page: number
+            pageSize: number
+            teams: Team[]
+          }
+          
+          export interface Team {
+            _id: string
+            name: string
+            email: string
+            division: string
+            createdAt: string
+            updatedAt: string
+            __v: number
+          }
 
       

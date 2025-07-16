@@ -32,28 +32,9 @@ createNotification(position: 'top', type: 'success'| 'info'| 'warning'| 'error',
   this.notification.create(type, title, message, {nzPlacement: position, nzDuration: 3000});
 }
 
-//   registerData = {
-//   firstName: '',
-//   surname: '',
-//   dateOfBirth: '',
-//   imageUrl: '',
-//   division: '',
-//   dateOfRegistration: '',
-//   gender: '',
-//   email: '',
-//   phoneNumber: '',
-//   idType: '',
-//   idNumber: '',
-//   presentClub: {
-//     name: '',
-//     fromDate: '',
-//     toDate: ''
-//   },
-//   formerClubs: [] 
-// }
 
 submit(form: NgForm) {
-  console.log('🔥 SUBMIT TRIGGERED');
+  console.log(' SUBMIT TRIGGERED');
 
   const previousData = this.registrationService.getFormData(); // division + step 1 data
   const formData = form.value; // current step data (e.g. formerClubs, presentClub, etc.)
