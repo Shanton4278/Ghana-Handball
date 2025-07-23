@@ -1,12 +1,25 @@
 .all{
     background-color: white;
-    height: 120vh;
+    height: 100vh;
     font-family: "Outfit", sans-serif;
+    width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.logo-img {
+  height: 60.4px;
+  width: 70px;
+  padding-top: 20px;
+  padding-left: 10px;
+}
+
+.hey{
+  background-color: #F9F9FC;
 }
 
 .white-sider {
-  background-color: black;
-  border: solid gray 1px;
+  // background-color: black;
+  // border: solid gray 1px;
   padding-top: 20px;
   height: 100vh;
   cursor: pointer;
@@ -16,8 +29,10 @@
   display: flex;
   flex-direction: column;
   height: 120vh;
-  width: 20%;
+  // width: 20%;
   cursor: pointer;
+  width: 150px;
+  flex-shrink: 0;
 }
 
 .currentTab {
@@ -32,7 +47,9 @@
 
 .active-tab {
   border: 1px solid white;
-  background-color: lightsteelblue;
+  background-color: #000000;
+  color: white;
+  font-weight: 600;
   opacity: 0.8;
   border-radius: 6px;
   cursor: pointer;
@@ -44,16 +61,20 @@
     // background-color: yellow;
   }
   
-  .custom-content {
-    padding: 24px;
-    // background-color: green;
-    width: 95%;
-  }
+  // .custom-content {
+  //   padding: 24px;
+  //   // background-color: green;
+  //   width: 95%;
+  // }
 
 .inner{
     height: 130vh;
-    // background-color: blue;
     display: flex;
+    padding-top: 10px;
+    width: 100%;
+  max-width: 100%;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
 }
 .card-container {
     display: flex;
@@ -119,27 +140,28 @@
     }
   }
 
-  .right-side{
-    // background-color: yellow;
-    // padding: 10px;
-    padding-top: 10px;
-    width: 100%;
+  // .right-side,
+  .custom-content{
+  padding-bottom: 50px;
+    padding: 20px;
+    max-width: 100%;
+  overflow-x: hidden;
+  // border: 1px solid red;
   }
+
 
   .search-wrapper {
     display: flex;
-    justify-content: end;
+    align-items: center;
     width: 200px;
     height: 39px;
-    display: flex;
-    align-items: center;
-    border: 1px solid #d1d5db; 
     padding-left: 8px;
     margin-top: 10px;
     border-radius: 10px;
     background-color: white;
-    color: #9ca3af; 
+    color: #9ca3af;
     margin-left: 68%;
+    border: 1px solid #d1d5db;
   }
   
   @media (min-width: 768px) {
@@ -148,38 +170,41 @@
       padding-left: 16px;
     }
   }
-
-  .whole-line{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 100%;
-  }
   
   .search-icon {
     width: 16px;
     height: 16px;
     margin-right: 8px;
-    background-color: white;
+    pointer-events: none; /* ensure icon doesn't block input clicks */
   }
   
   .search-input {
-    width: 95%;
-    border: 1px solid white;
-    border-radius: 10px;
+    width: 100%;
+    border: none;
     outline: none;
-    padding: 4px;
-    font-size: 12px;
+    font-size: 14px;
     background-color: white;
+    padding: 4px 8px;
   }
   
-  @media (min-width: 568px) {
-    .search-input {
-      font-size: 16px;
-    }
+  .search-input:focus {
+    outline: none;
+  }
+  
+  .search-wrapper:focus-within {
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+  }
+  
+  .whole-line{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 10px;
+    // margin-top: 20px;
+    // margin-bottom: 50px;
+    width: 100%;
+    // padding-bottom: 20px;
   }
   
   .pagination-container {
@@ -270,3 +295,7 @@
   ::ng-deep .ant-pagination-item-active > a {
     color: white !important; 
   }
+
+  
+
+  

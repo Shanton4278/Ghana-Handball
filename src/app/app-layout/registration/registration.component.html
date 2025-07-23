@@ -22,12 +22,22 @@
         <div class="form-grid">
           <nz-form-item>
             <label>First Name</label>
-            <input type="text" name="firstName" [(ngModel)]="registerData.firstName" #firstName="ngModel" placeholder="Enter your legal first name">
+            <input type="text" name="firstName" required pattern="^[A-Za-z\s]+$" 
+            [(ngModel)]="registerData.firstName" #firstName="ngModel" placeholder="Enter your legal first name">
+            <div *ngIf="firstName.invalid && firstName.touched" class="error">
+              <div *ngIf="firstName.errors?.['required']" style="color: red">Name is required.</div>
+              <div *ngIf="firstName.errors?.['pattern']" style="color: red">Only letters and spaces allowed.</div>
+            </div>
           </nz-form-item>
   
           <nz-form-item>
             <label>Last Name</label>
-            <input type="text" name="surname" [(ngModel)]="registerData.surname" #surname="ngModel" placeholder="Enter Last Name">
+            <input type="text" name="surname" required pattern="^[A-Za-z\s]+$" 
+             [(ngModel)]="registerData.surname" #surname="ngModel" placeholder="Enter Last Name">
+             <div *ngIf="firstName.invalid && firstName.touched" class="error">
+              <div *ngIf="firstName.errors?.['required']" style="color: red">Name is required.</div>
+              <div *ngIf="firstName.errors?.['pattern']" style="color: red">Only letters and spaces allowed.</div>
+            </div>
           </nz-form-item>
         </div>
   
@@ -36,27 +46,12 @@
           <nz-form-item>
             <label for="gender">Gender</label>
             <select name="gender" required [(ngModel)]="registerData.gender" #gender="ngModel">
-              <option disabled selected></option>
+              <option value="" disabled selected hidden>Select Gender</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
               <option value="Other">Other</option>
             </select>
           </nz-form-item>
-
-          <!-- <nz-form-item>
-            <nz-form-label>Date of Birth</nz-form-label>
-            <nz-form-control>
-              <input 
-                type="date" 
-                name="dateOfBirth" 
-                [(ngModel)]="registerData.dateOfBirth" 
-                #dateOfBirth="ngModel" 
-                placeholder="Enter Date of Birth"
-                class="date-input"
-              />
-            </nz-form-control>
-          </nz-form-item> -->
-          
   
           <nz-form-item>
             <label>Date of Birth</label>
@@ -88,13 +83,15 @@
         <div class="form-grid">
           <nz-form-item>
             <label>ID Type</label>
-            <select name="idType" [(ngModel)]="registerData.idType" #idType="ngModel">
-              <option disabled selected></option>
+            <select name="idType" required [(ngModel)]="registerData.idType" #idType="ngModel">
+              <option value="" disabled selected hidden>Select ID type</option>
               <option value="Passport">Passport</option>
               <option value="Ghana Card">Ghana Card</option>
               <option value="Voter ID">Voter ID</option>
               <option value="Driver License">Driver's License</option>
-            </select>
+            </select><div *ngIf="idType.invalid && idType.touched" style="color: red;">
+              ID type is required.
+            </div>
           </nz-form-item>
   
           <nz-form-item>
@@ -139,7 +136,7 @@
   
     <!-- Submit Button -->
     <div class="submit-btn-container">
-      <button type="submit" nz-button class="submit-btn">SUBMIT</button>
+      <button type="submit"  [disabled]="registerForm.invalid" nz-button class="submit-btn">SUBMIT</button>
     </div>
       </form>
     </div>

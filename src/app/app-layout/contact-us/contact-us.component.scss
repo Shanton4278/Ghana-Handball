@@ -32,7 +32,7 @@
         align-items: center;
         gap: 60px;
         font-family: "Outfit", sans-serif;
-        padding-top: 20px;
+        padding-top: -20px;
     }
 }
 
@@ -47,7 +47,7 @@
 }
 @media (min-width: 756px){
   .contact-text{
-    font-size: 36px;
+    font-size: 32px;
     padding-left: 25%;
   } 
 }
@@ -215,5 +215,29 @@
       height: 45px;
       font-size: 16px;
       font-weight: 400;
+    }
+  }
+
+  .gallery-bg{
+    background-image: url('../../../assets/images/gallery-bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-top: 40px;
+    // padding-bottom: 20px;
+    height: 35vh;
+  }
+  .gallery-text{
+    color: black;
+     font-size: 16px;
+      font-weight: 500;
+       text-align: center;
+         padding-top: 30px;
+  }
+  
+  @media (min-width: 768px) {
+    .gallery-text {
+      // padding-left: 70px;
+      font-size: 42px;
     }
   }

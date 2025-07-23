@@ -36,7 +36,7 @@ export class SignInComponent {
         console.log("signed in", response)
         localStorage.setItem('token',response.token)
         this.createNotification('top', "success", "Login Successful!!", "Welcome Back!");
-        this.router.navigate(['/all'])
+        this.router.navigate(['auth/all'])
       },
       error: (error) => {
         console.log("sign in eror", error)

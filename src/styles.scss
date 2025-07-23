@@ -47,15 +47,18 @@
     font-variation-settings:
       "wdth" 100;
   }
-  body{
-    background-image:
-   url('../src/assets/images/ladies.svg');
-  background-repeat: no-repeat;
-  // background-position: bottom;
-  background-size: cover;
-  // height: 93.5vh;
-  // width: 100vw;
-  // font-weight: 800;
+  // body{
+  //   background-image: url('assets/images/ladies.svg');
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  // }
+
+  .bg-home{
+    background-image: url('assets/images/ladies.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 130vh;
+    width: 100vw;
   }
 
   .livvic-light-italic {
@@ -64,7 +67,11 @@
     font-style: italic;
   }
   
-
   .mission-text{
     font-family: "Livvic", sans-serif;
+  }
+
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
   }

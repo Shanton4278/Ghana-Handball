@@ -42,7 +42,7 @@
       </p> -->
     </div>
 
-      <div style="display: flex; width: 70%; justify-content: center; margin: auto; margin-top: 10px;">
+      <div class="whole-team">
         <nz-form-item>
           <label>Team</label>
           <select [ngModel]="selectedTeam" (ngModelChange)="selectTeam($event)" name="team" [disabled]="!selectedDivision || listOfTeams.length === 0"

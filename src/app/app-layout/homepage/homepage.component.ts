@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,  OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
 // import {NgIf} from '@angular/common';
 import {
   trigger,
@@ -12,7 +13,7 @@ import {
 
 @Component({
   selector: 'app-homepage',
-  imports: [RouterModule],
+  imports: [RouterModule,NzSpinModule],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.scss',
   animations: [
@@ -36,5 +37,14 @@ export class HomepageComponent {
   //     animate('400ms ease-out', style({ transform: 'translateX(0)', opacity: 1 })),
   //   ]),
   // ]) 
+
+  // isLoading = true;
+
+// ngOnInit(): void {
+//   // Simulate API or asset load
+//   setTimeout(() => {
+//     this.isLoading = false;
+//   }, 3000);
+// }
   
 }

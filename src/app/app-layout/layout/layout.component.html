@@ -40,5 +40,48 @@
   </nav>
 <div class="main-container">
     <router-outlet></router-outlet>
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <img src="../../../assets/images/hdlogo.svg" alt="" width="67px" height="53px">
+        </div>
+    
+        <div class="footer-section">
+          <ul>
+            <li><a [routerLink]="'/home'">Home</a></li>
+            <li><a [routerLink]="'/about-us'">About Us</a></li>
+            <li><a [routerLink]="'/gallery'">Gallery</a></li>
+            <li><a [routerLink]="'/contact-us'">Contact Us</a></li>
+          </ul>
+        </div>
+    
+        <div class="footer-section">
+          <div class="social-icons">
+            <img src="../../../assets/images/linkedin.svg" alt="Instagram" />
+            <img src="../../../assets/images/twitter.svg" alt="Facebook" />
+            <img src="../../../assets/images/Ball.svg" alt="Twitter" />
+          </div>
+        </div>
+
+      </div>
+      <div class="second-line">
+        <div style="display: flex; color: #4D4D4D; gap: 10px;">
+          <img src="../../../assets/images/footermail.svg" alt="">
+          <h1>Handballassociationofghana&#64;gmail.com</h1>
+        </div>
+        <div style="display: flex; color: #4D4D4D; gap: 10px;">
+          <img src="../../../assets/images/footerphone.svg" alt="">
+          <h1>+233547141237</h1>
+        </div>
+        <div  style="display: flex; color: #4D4D4D; gap: 10px;">
+          <img src="../../../assets/images/footerlocation.svg" alt="">
+          <h1>Accra, Ghana</h1>
+        </div>
+      </div>
+      <div style="color: black; text-align: center; padding-top: 20px;">
+        Copyright © 2025  Handball association of Ghana
+      </div>
+    </footer>
+    
   </div>
   

@@ -6,19 +6,21 @@
     height: 100vh;
     text-align: center;
     background-color: #f6ffed;
-    padding-bottom: 70%;
+    padding-bottom: 20%;
     padding: 20%;
+    // padding-top: 50px;
     font-family: "Outfit", sans-serif;
   }
 
-  @media (min-width: 765px){
-    .success-container {
-      padding-bottom: 27%;
-    }
-  }
+  // @media (min-width: 765px){
+  //   .success-container {
+  //     padding-bottom: 27%;
+  //     padding-top: 50px;
+  //   }
+  // }
   
   .success-box {
-    padding-bottom: 80%;
+    padding-bottom: 40%;
     max-width: 600px;
     width: 90%;
   }

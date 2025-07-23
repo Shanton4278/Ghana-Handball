@@ -116,7 +116,7 @@ divisionOne(){
     next: (response) => {
       console.log("Division One Teams", response);
       this.listOfTeams = response.data.teams;
-      console.log("First Team:", this.listOfTeams[0]);
+      console.log("First set of Teams:", this.listOfTeams[0]);
 
     },
     error: (error) => {
@@ -130,7 +130,7 @@ divisionTwo(){
     next: (response) => {
       console.log("Division Two Teams", response);
       this.listOfTeams = response.data.teams;
-      console.log("First Team:", this.listOfTeams[0]);
+      console.log("Second set of Teams:", this.listOfTeams[0]);
 
     },
     error: (error) => {

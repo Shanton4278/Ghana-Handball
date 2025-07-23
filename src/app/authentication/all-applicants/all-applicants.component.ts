@@ -8,6 +8,8 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NgFor } from '@angular/common';
 import { NgIf } from '@angular/common';
 import { CommonModule } from '@angular/common';
+import { Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { RegistrationService } from '../../services/registration.service';
 import { getApplicantsModel, registerModel } from '../../models/registration.model';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
@@ -23,6 +25,10 @@ import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 })
 export class AllApplicantsComponent {
   constructor(private router: Router, private registrationService : RegistrationService) {
+    this.searchInput$.pipe(debounceTime(500)).subscribe((searchTerm: string) => {
+      console.log("Debounced search term:", searchTerm);
+      this.performSearch(searchTerm)
+    })
     // this.registerData = new registerModel()
     this.getApplicantsData = new getApplicantsModel()
     
@@ -98,5 +104,19 @@ export class AllApplicantsComponent {
     this.page = 1;
     this.allApplicants();
   }
+
+   ///// SEARCH FUNCTIONALITY /////
+   searchUnit: string = '';
+   searchInput$ = new Subject <string> ()
+ 
+   performSearch(searchTerm: string): void {
+     this.getApplicantsData.search = searchTerm.trim();
+     this.allApplicants();
+   }
+ 
+   onSearch(value:string): void {
+     console.log("Typed value:", value); 
+   this.searchInput$.next(value)
+   }
   
 }

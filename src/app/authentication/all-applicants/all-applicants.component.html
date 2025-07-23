@@ -1,18 +1,23 @@
 <section class="all">
+  <nav>
+    <img src="../../../assets/images/hdlogo.svg" alt="" class="logo-img">
+  </nav>
     <div class="inner">
     <!-- <nz-layout class="custom-layout"> -->
       <!-- Sidebar with vertical tabs -->
 
       <div class="sidenav">
-  <nz-sider [nzWidth]="140" class="white-sider">
-    <div style="display: flex; flex-direction: column; gap: 30px;">
-      <button
+  <nz-sider [nzWidth]="150" class="white-sider" nzTheme="light">
+    <div style="display: flex; flex-direction: column; gap: 30px;"> 
+      <div style="text-align: center; color: #727A90;">MAIN MENU</div>
+      <button style="display: flex; align-items: center; gap: 10px; justify-content: center;"
         (click)="selectTab(0)"
         [ngClass]="{ 'currentTab': true, 'active-tab': selectedTabIndex === 0 }"
       >
+      <img src="../../../assets/images/two-people.svg" alt="">
         Applicants
       </button>
-      <button
+      <!-- <button
         (click)="selectTab(1)"
         [ngClass]="{ 'currentTab': true, 'active-tab': selectedTabIndex === 1 }"
       >
@@ -23,7 +28,7 @@
         [ngClass]="{ 'currentTab': true, 'active-tab': selectedTabIndex === 2 }"
       >
         Settings
-      </button>
+      </button> -->
     </div>
   </nz-sider>
 </div>
@@ -42,14 +47,14 @@
       <nz-tabset [(nzSelectedIndex)]="selectedTabIndex">
         <nz-tab>
         <nz-content class="custom-content">
-        <div style="display: flex; flex-direction: column;" class="right-side">
-            <div style="height: 72px; display: flex; justify-content: space-between;">
-                <div style="font-weight: 600; font-size: 18px;">All Applicants</div>
+        <div style="display: flex; flex-direction: column;" class="right-side"> 
+            <div style="height: 52px; display: flex; justify-content: space-between;">
+                <div style="font-weight: 600; font-size: 20px;">Applicants</div>
                 <div style="display: flex; gap: 10px;">
-                    <button style="border: solid 1px rgba(15, 15, 15, 0.17); border-radius: 7px; padding: 10px; display: flex; align-items: center; gap: 10px; 
+                    <!-- <button style="border: solid 1px rgba(15, 15, 15, 0.17); border-radius: 7px; padding: 10px; display: flex; align-items: center; gap: 10px; 
                     color: black; background-color: rgba(15, 15, 15, 0.06); height: 40px;">
                     <img src="../../../assets/images/import.svg" style="width: 20px; height: 20px; align-items: center;">
-                        Import</button>
+                        Import</button> -->
                     <button routerLink="/divisions" style="background-color: black; color: white; height: 40px; display: flex; gap: 8px; border: solid 1px black; border-radius: 7px; text-align: center; align-items: center; padding: 10px;">
                         <img src="../../../assets/images/plus.svg" style="width: 18px; height: 18px; align-items: center;">
                         Add Applicant</button> 
@@ -61,35 +66,37 @@
             <div class="search-wrapper">
                 <img src="../../../assets/images/fi-search.svg" alt="Search Icon" class="search-icon" />
                 <input
-                  type="text"
+                  type="text" [(ngModel)]="searchUnit" (ngModelChange)="searchInput$.next($event)"
                   name="searchUnit"
                   id="searchUnit"
-                  placeholder="Search Unit"
+                  placeholder="Search Applicant"
                   class="search-input"
                 />
             </div>
           </div>
               
-            
-          <nz-table [nzData]="listOfData" [nzShowPagination]="false" [nzScroll]="{ y: '340px' }">
+            <div class="custom-rounded-table">
+          <nz-table [nzData]="listOfData" [nzShowPagination]="false" [nzScroll]="{ y: '440px' }">
             <thead>
               <tr>
-                <th style="color: #727A90;" nzWidth="200px">Applicant ID</th>
+                <!-- <th style="color: #727A90;" nzWidth="200px">Applicant ID</th> -->
                   <th style="color: #727A90;">Full Name</th>
                   <th style="color: #727A90;">Division Type</th>
-                  <th style="color: #727A90;">Gender</th>
+                  <th style="color: #727A90;">Team</th>
+                  <th style="color: #727A90;">Phone Number</th>
                   <th style="color: #727A90;">Date Registered</th>
               </tr>
             </thead>
             <tbody style="color: #7D7D7D">
               <tr *ngFor="let data of listOfData" style="height: 62px;">
-                <td>{{ data }}</td>
+                <!-- <td>{{ data }}</td> -->
                 <td>
                   <div>{{ data.firstName + ' ' + data.surname }}</div>
                   <div style="color: #6B7280; font-size: 12px;">{{data.email}}</div>
               </td>
                 <td>{{ formatDivision(data.division) }}</td>
-                <td>{{ data.gender }}</td>
+                <td>{{data.team.name}}</td>
+                <td>{{ data.phoneNumber}}</td>
                 <td>{{ formatDate(data.dateOfRegistration) }}</td>          
 
               </tr>
@@ -116,6 +123,7 @@
               </nz-pagination>
             </div>
           </div>
+        </div>
   
         
       <!-- </nz-layout> -->
@@ -123,9 +131,10 @@
 </nz-content>
 </nz-tab>
 
-<nz-tab>
-  My Apppppp
+<!-- <nz-tab>
+  My App
 </nz-tab>
+<nz-tab>Settings</nz-tab> -->
 </nz-tabset>
 </div>
     <!-- </nz-layout>  -->
