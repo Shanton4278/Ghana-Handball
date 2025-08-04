@@ -2,7 +2,9 @@ section{
   background-color: white;
   font-family: "Outfit", sans-serif;
   min-height: 150vh;
-  padding-bottom: 40px;
+  height: auto;
+  padding-bottom: 50vh;
+  padding: 20px;
 }
 .gallery-bg{
   background-image: url('../../../assets/images/gallery-bg.svg');
@@ -14,9 +16,18 @@ section{
   height: 35vh;
 }
 
-/* Gallery Title */
 section > div:first-child {
   margin-bottom: 20px;
+}
+.gal-ex{
+  text-align: center;
+   font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .gal-ex {
+    font-size: 16px;
+  }
 }
 
 
@@ -27,6 +38,7 @@ section > div:first-child {
   width: 100%;
   max-width: 1200px;
   margin: auto;
+  padding-bottom: 70vh;
 }
 
 
@@ -43,8 +55,8 @@ section > div:first-child {
 }
 .gallery-text{
   color: black;
-   font-size: 18px;
-    font-weight: 500;
+   font-size: 26px;
+    font-weight: 600;
      text-align: center;
        padding-top: 80px;
 }
@@ -60,16 +72,26 @@ section > div:first-child {
   overflow: hidden;
   border-radius: 10px;
 }
+@media (max-width: 600px) {
+  .gallery-item {
+    border-radius: 5px;
+  }
+}
 
 .gallery-item img {
   width: 100%;
-  max-height: auto;
+  // max-height: auto;
   aspect-ratio: 4 / 3;
-  object-fit: cover;
+  object-fit:cover;
   transition: transform 0.3s ease;
   display: block;
 }
+@media (max-width: 600px) {
+  .gallery-item img {
+    aspect-ratio: 1 / 1;
+  }
+}
 
 .gallery-item img:hover {
-  transform: scale(1.05);
+  transform: scale(1.30);
 }

@@ -1,7 +1,10 @@
 .contact-them{
   background-color: white;
   min-height: 140vh;
+  height: auto;
   padding-top: 30%;
+  font-family: "Outfit", sans-serif;
+  padding-bottom: 60vh;
 }
 @media (min-width: 756px){
   .contact-them{
@@ -10,19 +13,18 @@
 }
 .contact{
     background-color: white;
-    min-height: 120vh;
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
-    margin: auto;
+    // margin: auto;
     justify-content: center;
     align-items: center;
-    gap: 60px;
-    font-family: "Outfit", sans-serif;
-    padding-top: 30px;
+    gap: 40px;
+    // padding-top: 30px;
 }
 @media (min-width: 756px) {
     .contact{
-        min-height: 120vh;
+        min-height: 80vh;
         margin-bottom: 40px;
         background-color: white;
         height: 120vh;
@@ -38,8 +40,8 @@
 
 .contact-text{
   color: black;
-   font-size: 18px;
-    font-weight: bold;
+   font-size: 26px;
+    font-weight: 600;
     padding-left: 15%;  
       text-align: left;
        display: flex;
@@ -47,7 +49,7 @@
 }
 @media (min-width: 756px){
   .contact-text{
-    font-size: 32px;
+    font-size: 36px;
     padding-left: 25%;
   } 
 }
@@ -225,19 +227,24 @@
     background-position: center;
     padding-top: 40px;
     // padding-bottom: 20px;
-    height: 35vh;
+    height: 20vh;
+  }
+  @media (min-width: 768px) {
+    .gallery-bg {
+      height: 25vh;
+    }
   }
   .gallery-text{
     color: black;
-     font-size: 16px;
+     font-size: 20px;
       font-weight: 500;
        text-align: center;
-         padding-top: 30px;
+        
   }
   
   @media (min-width: 768px) {
     .gallery-text {
-      // padding-left: 70px;
+      padding-top: 30px;
       font-size: 42px;
     }
   }

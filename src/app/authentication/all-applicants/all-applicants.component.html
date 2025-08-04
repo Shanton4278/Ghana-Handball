@@ -1,6 +1,8 @@
 <section class="all">
-  <nav>
+  <nav style=" display: flex; justify-content: space-between; align-items: center; padding: 10px;">
     <img src="../../../assets/images/hdlogo.svg" alt="" class="logo-img">
+      <button [routerLink]="'/home'" class="logout">Logout</button>
+
   </nav>
     <div class="inner">
     <!-- <nz-layout class="custom-layout"> -->
@@ -76,7 +78,7 @@
           </div>
               
             <div class="custom-rounded-table">
-          <nz-table [nzData]="listOfData" [nzShowPagination]="false" [nzScroll]="{ y: '440px' }">
+          <nz-table [nzData]="listOfData" [nzShowPagination]="false" [nzScroll]="{ y: '400px' }">
             <thead>
               <tr>
                 <!-- <th style="color: #727A90;" nzWidth="200px">Applicant ID</th> -->

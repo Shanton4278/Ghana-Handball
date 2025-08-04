@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { NgForm } from '@angular/forms';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { FormsModule, NgModel } from '@angular/forms';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 @Component({
   selector: 'app-divisions',
@@ -16,9 +17,14 @@ import { FormsModule, NgModel } from '@angular/forms';
 })
 export class DivisionsComponent {
 
-  constructor(private registrationService: RegistrationService){
+  constructor(private registrationService: RegistrationService, private notification: NzNotificationService){
 
   }
+
+  createNotification(position: 'top', type: 'success'| 'info'| 'warning'| 'error', title: string, message: string ){
+    this.notification.create(type, title, message, {nzPlacement: position, nzDuration: 3000});
+  }
+  
   ngOnInit(){
     this.getAllTeams()
       // const saved = localStorage.getItem('selectedDivision');
@@ -39,31 +45,13 @@ export class DivisionsComponent {
 //     this.registrationService.setSelectedDivision(division);
 // }
 
-// selectDivision(division: string) {
-//   this.selectedDivision = division;
-//   console.log("here is the division", this.selectedDivision);
-//   localStorage.setItem('selectedDivision', division); 
-//   this.registrationService.setSelectedDivision(division);
-
-//   // Clear previous team selection
-//   this.selectedTeam = '';
-//   localStorage.removeItem('selectedTeam');
-//   this.listOfTeams = [];
-
-//   // Fetch teams for the selected division
-//   if (division === 'Division_One') {
-//     this.divisionOne();
-//   } else if (division === 'Division_Two') {
-//     this.divisionTwo();
-//   }
-// }
 
 selectDivision(division: string) {
   if (this.selectedDivision === division) {
     // Deselect if same division is clicked again
     this.selectedDivision = '';
     localStorage.removeItem('selectedDivision');
-    this.registrationService.setSelectedDivision(''); // use empty string
+    this.registrationService.setSelectedDivision('');
     this.selectedTeam = '';
     localStorage.removeItem('selectedTeam');
     this.listOfTeams = [];
@@ -138,4 +126,20 @@ divisionTwo(){
     }
   })
 }
+
+goToRegistration() {
+  if (!this.selectedDivision) {
+    // alert('Please select a division before continuing.');
+    this.createNotification("top", "warning", "Please wait!", "Please select a division before continuing.");
+    return;
+  }
+
+  if (!this.selectedTeam) {
+    // alert('Please select a team before continuing.');
+    this.createNotification("top", "warning", "Please wait!", "Please select a team before continuing.");
+    return;
+  }
+  window.location.href = '/registration'; 
+}
+
 }

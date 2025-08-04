@@ -30,21 +30,5 @@ import {
 })
 export class HomepageComponent {
 
-
-  // trigger('slideIn', [
-  //   transition(':enter', [
-  //     style({ transform: 'translateX(-100%)', opacity: 0 }),
-  //     animate('400ms ease-out', style({ transform: 'translateX(0)', opacity: 1 })),
-  //   ]),
-  // ]) 
-
-  // isLoading = true;
-
-// ngOnInit(): void {
-//   // Simulate API or asset load
-//   setTimeout(() => {
-//     this.isLoading = false;
-//   }, 3000);
-// }
   
 }

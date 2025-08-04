@@ -1,8 +1,9 @@
 section{
-    height: 360vh;
+    height: auto;
     background-color: white;
     padding: 50px;
     font-family: "Outfit", sans-serif;
+    padding-bottom: 50vh;
 }
 .About-bg{
     background-image: url('../../../assets/images/gallery-bg.svg');
@@ -18,11 +19,16 @@ section{
     margin: auto;
     display: flex;
     flex-direction: column;
-    padding-top: 30px;
+    padding-top: 10px;
+}
+@media (max-width: 768px) {
+    .about {
+        width: 95%;
+    }
 }
 .about-us{
     color: black;
-    font-size: 20px;
+    font-size: 26px;
     font-weight: 600;
     text-align: center;
     padding-top: 60px;
@@ -30,7 +36,7 @@ section{
 
 @media (min-width: 768px) {
     .about-us {
-        font-size: 32px;
+        font-size: 36px;
     }
 }
 
@@ -40,7 +46,7 @@ section{
 }
 .overview{
     color: black;
-    padding-top: 20px;
+    padding-top: 10px;
     font-size: 17px;
 }
 .mission{
@@ -54,6 +60,25 @@ section{
     padding: 20px;
     // border: 1px solid red;
     border-radius: 20px;   
+}
+.our-mission{
+    font-size: 32px; font-weight: 600; text-align: left;
+}
+@media (max-width: 768px) {
+    .our-mission {
+        font-size: 20px;
+    }
+}
+.our-mission-text{
+    font-size: 18px; font-weight: 300; text-align: left;
+     width: 576px; padding-top: 20px; padding-bottom: 50px;
+}
+@media (max-width: 768px) {
+    .our-mission-text {
+        font-size: 14px;
+        width: 100%;
+        padding: 10px;
+    }
 }
 
 .vision{
@@ -77,6 +102,29 @@ section{
     font-weight: 500;
     text-align: center;
   }
+  @media (max-width: 768px) {
+    .comp-text {
+      font-size: 20px;
+    }
+  }
+  .all-cards {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    gap: 40px;
+    width: 90%;
+    margin: auto;
+    padding-top: 40px;
+  }
+  
+  @media (max-width: 768px) {
+    .all-cards {
+      flex-direction: column; 
+      align-items: center;
+      gap: 20px;
+    }
+  }
+  
 
   .last-card{
     width: 367px;
@@ -91,16 +139,48 @@ section{
     padding-bottom: 20px;
     padding: 20px;
   }
+  @media (max-width: 768px) {
+    .last-card {
+      width: 300px;
+      height: auto;
+      padding: 20px;
+    }
+  }
 
   .last-card-title{
     font-size: 24px;
     font-weight: 500;
+  }
+  @media (max-width: 768px) {
+    .last-card-title {
+      font-size: 20px;
+    }
   }
   .last-card-text{
     margin-top: -30px;
     padding: 15px;
     text-align: center;
 }
+@media (max-width: 768px) {
+    .last-card-text {
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+
+  .image-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+  }
+
+  .image-section h2{
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+  }
 .image-container {
     width: 324px;
     height: 255px;
@@ -120,3 +200,75 @@ section{
     object-fit: contain;
     border-radius: 20px;
   }
+  @media (max-width: 768px) {
+    .image-container {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .our-history{
+    font-size: 30px;
+     font-weight: 600;
+  }
+
+  @media (max-width: 768px){
+    .our-history{
+        font-size: 20px;
+    }
+  }
+
+  .here-container {
+    position: relative;
+    display: inline-block;
+    max-width: 80%;
+  }
+  
+  .here-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+    margin-top: 30px;
+  }
+  
+  .overlay-text {
+    position: absolute;
+    bottom: 20px; 
+    left: 40%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.8); 
+    color: #333; 
+    padding: 15px 20px;
+    border-radius: 8px;
+    max-width: 80%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .custom-bullet {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    margin-bottom: 12px;
+  }
+
+  .image-hide{
+    position: relative; width: fit-content;
+  }
+  @media (max-width: 756px){
+    .image-hide{
+      display: none;
+    }
+  }
+  .ball{
+    width: 30px; height: 30px; border: 1px solid black; border-radius: 50%;
+           background-color: black; display: flex; justify-content: center; padding: 1px;
+  }
+  @media (max-width: 756px){
+    .ball{
+      width: 30px; height: 18px;
+    }
+  }
+  

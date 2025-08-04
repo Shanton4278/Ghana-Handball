@@ -97,18 +97,20 @@
   
   .second-section{
     background-color: white;
-    height: 350vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: "Outfit", sans-serif;
+    padding-bottom: 80vh;
   }
 
   .whole-partners{
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding-top: 80px;
   }
   .partners{
     display: flex;
@@ -118,10 +120,34 @@
     gap: 70px;
     height: 105px;
   }
+  @media (max-width: 768px) {
+    .partners {
+      // flex-direction: column;
+      gap: 20px;
+    }
+  }
   .partner-text{
     font-size: 36px;
     font-weight: 700;
     text-align: center;
+  }
+  @media (max-width: 768px) {
+    .partner-text {
+      font-size: 20px;
+    }
+  }
+
+  .partners img{
+    width: 100px;
+    height: 100px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  @media (max-width: 768px) {
+    .partners img {
+      width: 50px;
+      height: 50px;
+    }
   }
   .whole-comp{
     display: flex;
@@ -131,11 +157,56 @@
     gap: 20px;
     padding: 10%;
   }
+  .left-image{
+    aspect-ratio: 4 / 3;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    position: relative;
+     width: 500px;
+     display: block;
+  }
+  @media (max-width: 768px) {
+    .left-image {
+      width: 100px;
+      height: auto;
+      display: none;
+    }
+  }
+  .left-image:hover{
+    transform: scale(1.05);
+  }
+  .african-games{
+    font-size: 32px;
+     font-weight: 600; 
+     text-align: left;
+  }
+  @media (max-width: 768px) {
+    .african-games {
+      font-size: 20px;
+    }
+  }
+
+  .african-text{
+    font-size: 18px; font-weight: 300; text-align: left; width: 576px;
+           padding-top: 20px; padding-bottom: 50px;
+  }
+  @media (max-width: 768px) {
+    .african-text {
+      font-size: 14px;
+      width: 100%;
+      padding: 10px;
+    }
+  }
 
   .comp-text{
     font-size: 36px;
     font-weight: 700;
     text-align: center;
+  }
+  @media (max-width: 768px) {
+    .comp-text {
+      font-size: 20px;
+    }
   }
   .last-card{
     width: 408px;
@@ -150,20 +221,64 @@
     padding-bottom: 20px;
     padding: 20px;
   }
+  @media (max-width: 768px) {
+    .last-card {
+      width: 300px;
+      height: auto;
+      padding: 20px;
+    }
+  }
+  .all-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-top: 50px;
+  }
+
+  @media (max-width: 768px) {
+    .all-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 
   .last-card-title{
     font-size: 24px;
     font-weight: 500;
   }
+  @media (max-width: 768px) {
+    .last-card-title {
+      font-size: 20px;
+    }
+  }
   .last-card-text{
     margin-top: -30px;
     padding: 15px;
   }
+  @media (max-width: 768px) {
+    .last-card-text {
+      font-size: 14px;
+      text-align: center;
+    }
+  }
   .learn{
     color: #175CD3; font-size: 19px; font-weight: 500; text-align: left; padding-left: 10px;
   }
+  @media (max-width: 768px) {
+    .learn {
+      font-size: 16px;
+      padding-left: 5px;
+    }
+  }
   .learn1{
     color: #30312C; font-size: 19px; font-weight: 500; text-align: left; padding-left: 40px;
+  }
+  @media (max-width: 768px) {
+    .learn1 {
+      font-size: 16px;
+      padding-left: 20px;
+    }
   }
 
   .logo-spinner {
@@ -204,5 +319,37 @@
     max-height: 100%;
     object-fit: contain;
     border-radius: 20px;
+  }
+  @media (max-width: 768px) {
+    .image-container {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    .image-container img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .african{
+    font-size: 18px;
+    padding-bottom: -20px;
+  }
+  @media (max-width: 768px) {
+    .african {
+      font-size: 10px;
+    }
+  }
+
+  .latest{
+    font-size: 36px;
+     font-weight: 600;
+      text-align: center;
+  }
+  @media (max-width: 768px) {
+    .latest {
+      font-size: 20px;
+    }
   }
   

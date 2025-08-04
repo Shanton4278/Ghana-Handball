@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router,RouterModule } from '@angular/router';
 
 @Component({
@@ -8,5 +8,9 @@ import { Router,RouterModule } from '@angular/router';
   styleUrl: './success-page.component.scss'
 })
 export class SuccessPageComponent {
+
+  ngOnInit(): void {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }
 
 }

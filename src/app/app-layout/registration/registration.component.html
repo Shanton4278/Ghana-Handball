@@ -25,7 +25,7 @@
             <input type="text" name="firstName" required pattern="^[A-Za-z\s]+$" 
             [(ngModel)]="registerData.firstName" #firstName="ngModel" placeholder="Enter your legal first name">
             <div *ngIf="firstName.invalid && firstName.touched" class="error">
-              <div *ngIf="firstName.errors?.['required']" style="color: red">Name is required.</div>
+              <div *ngIf="firstName.errors?.['required']" style="color: red">First name is required.</div>
               <div *ngIf="firstName.errors?.['pattern']" style="color: red">Only letters and spaces allowed.</div>
             </div>
           </nz-form-item>
@@ -35,7 +35,7 @@
             <input type="text" name="surname" required pattern="^[A-Za-z\s]+$" 
              [(ngModel)]="registerData.surname" #surname="ngModel" placeholder="Enter Last Name">
              <div *ngIf="firstName.invalid && firstName.touched" class="error">
-              <div *ngIf="firstName.errors?.['required']" style="color: red">Name is required.</div>
+              <div *ngIf="firstName.errors?.['required']" style="color: red">Last name is required.</div>
               <div *ngIf="firstName.errors?.['pattern']" style="color: red">Only letters and spaces allowed.</div>
             </div>
           </nz-form-item>
@@ -55,7 +55,9 @@
   
           <nz-form-item>
             <label>Date of Birth</label>
-            <input type="date" name="dateOfBirth" [(ngModel)]="registerData.dateOfBirth" #dateOfBirth="ngModel" placeholder="Enter Date of Birth">
+            <input type="date" name="dateOfBirth" [(ngModel)]="registerData.dateOfBirth" #dateOfBirth="ngModel"
+             placeholder="Enter Date of Birth">
+             <!-- <small style="color: gray; font-size: 12px;">Please select your date of birth.</small> -->
           </nz-form-item>
         </div>
 
@@ -63,13 +65,31 @@
         <div class="form-grid">
           <nz-form-item>
             <label>Email</label>
-            <input type="email" name="email" [(ngModel)]="registerData.email" #email="ngModel" placeholder="Enter Email">
+            <input 
+              type="email"
+              name="email"
+              [(ngModel)]="registerData.email"
+              #email="ngModel"
+              placeholder="Enter Email"
+              required
+              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+            />
+          
+            <div *ngIf="email.invalid && email.touched" class="error" style="color: red;">
+              <div *ngIf="email.errors?.['required']">Email is required.</div>
+              <div *ngIf="email.errors?.['pattern']">Enter a valid email address (e.g. name&#64;example.com)</div>
+            </div>
           </nz-form-item>
+          
+          <!-- <nz-form-item>
+            <label>Email</label>
+            <input type="email" name="email" [(ngModel)]="registerData.email" #email="ngModel" placeholder="Enter Email">
+          </nz-form-item> -->
 
           <nz-form-item>
             <label>Phone Number</label>
             <input type="text"  name="phoneNumber" [(ngModel)]="registerData.phoneNumber" #phoneNumber="ngModel"
-              placeholder="Enter Phone Number" required pattern="^(?:\+233|0)(24|25|26|27|50|54|55|56|57|58|59)\d{7}$"
+              placeholder="Enter Phone Number" required pattern="^(?:\+233|0)(20|23|24|25|26|27|50|54|55|56|57|58|59)\d{7}$"
               nz-input
             />
             <div *ngIf="phoneNumber.invalid && phoneNumber.touched">
@@ -136,7 +156,14 @@
   
     <!-- Submit Button -->
     <div class="submit-btn-container">
-      <button type="submit"  [disabled]="registerForm.invalid" nz-button class="submit-btn">SUBMIT</button>
+      <button type="submit" *ngIf="!isSubmitting"
+       nz-button class="submit-btn">SUBMIT</button>
+
+       <div *ngIf="isSubmitting" style="display: flex; align-items: center; justify-content: center;
+        height: 38px; width: 182px; gap: 20px">
+        <nz-spin nzSimple></nz-spin>
+        <span style="color: gray; font-size: 16px;">Submitting...</span>
+      </div>
     </div>
       </form>
     </div>

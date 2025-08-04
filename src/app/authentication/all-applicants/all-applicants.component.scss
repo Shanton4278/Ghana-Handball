@@ -10,7 +10,6 @@
   height: 60.4px;
   width: 70px;
   padding-top: 20px;
-  padding-left: 10px;
 }
 
 .hey{
@@ -70,7 +69,7 @@
 .inner{
     height: 130vh;
     display: flex;
-    padding-top: 10px;
+    // padding-top: 10px;
     width: 100%;
   max-width: 100%;
   flex-wrap: nowrap;
@@ -296,6 +295,24 @@
     color: white !important; 
   }
 
+  .logout {
+    border: 1px solid red;
+    border-radius: 20px;
+    padding: 2px;
+    background-color: red;
+    color: white;
+    width: 76px;
+    height: 35px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .logout:hover {
+    background-color: #8B0000;
+    border: 1px solid #8B0000;
+    color: white;
+  }
+  
   
 
   

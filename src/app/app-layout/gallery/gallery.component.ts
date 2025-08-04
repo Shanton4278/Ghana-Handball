@@ -18,6 +18,10 @@ export class GalleryComponent {
       { url: 'assets/images/hbimage5.JPG', alt: 'Image 5' },
       { url: 'assets/images/hbimage6.JPG', alt: 'Image 6' },
       { url: 'assets/images/hbimage7.JPG', alt: 'Image 7' },
+      { url: 'assets/images/hbimage8.jpg', alt: 'Image 8' },
+      { url: 'assets/images/hbimage9.jpg', alt: 'Image 9' },
+      { url: 'assets/images/hbimage10.jpg', alt: 'Image 10' },
+      { url: 'assets/images/hbimage11.jpg', alt: 'Image 11' },
     ];
   }
 

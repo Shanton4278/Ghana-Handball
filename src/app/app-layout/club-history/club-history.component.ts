@@ -36,8 +36,8 @@ createNotification(position: 'top', type: 'success'| 'info'| 'warning'| 'error',
 submit(form: NgForm) {
   console.log(' SUBMIT TRIGGERED');
 
-  const previousData = this.registrationService.getFormData(); // division + step 1 data
-  const formData = form.value; // current step data (e.g. formerClubs, presentClub, etc.)
+  const previousData = this.registrationService.getFormData(); 
+  const formData = form.value;
 
   const finalPayload: registerModel = {
     ...previousData,
@@ -64,14 +64,6 @@ submit(form: NgForm) {
     }
   });
 }
-
-
-
-
-// submit(form: NgForm) {
-//   alert("Form submitted!");
-//   console.log("🔥 SUBMIT TRIGGERED");
-// }
 
 
   }
