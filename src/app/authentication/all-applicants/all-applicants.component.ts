@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, HostListener,ViewChild } from '@angular/core';
 import { Router,RouterModule } from '@angular/router';
 import { NzTabPosition, NzTabsModule } from 'ng-zorro-antd/tabs';
 import { FormsModule, NgModel } from '@angular/forms';
@@ -13,6 +13,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { RegistrationService } from '../../services/registration.service';
 import { getApplicantsModel, registerModel } from '../../models/registration.model';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { AuthService } from '../../auth.service';
 // import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 
@@ -23,8 +24,12 @@ import { NzPaginationModule } from 'ng-zorro-antd/pagination';
   templateUrl: './all-applicants.component.html',
   styleUrl: './all-applicants.component.scss'
 })
-export class AllApplicantsComponent {
-  constructor(private router: Router, private registrationService : RegistrationService) {
+export class AllApplicantsComponent implements OnInit{
+  @ViewChild('dropdownRef') dropdownRef!: ElementRef;
+
+
+  constructor(private router: Router, private registrationService : RegistrationService,
+     private authService: AuthService) {
     this.searchInput$.pipe(debounceTime(500)).subscribe((searchTerm: string) => {
       console.log("Debounced search term:", searchTerm);
       this.performSearch(searchTerm)
@@ -39,9 +44,17 @@ export class AllApplicantsComponent {
   pageSize = 10;
   totalItems = 50;
   pageSizeOptions: number[] = [2, 5, 10, 15];
+  user: any;
 
   ngOnInit(): void{
-    this.allApplicants()
+    this.allApplicants();
+    this.user = this.authService.getCurrentUser();
+
+  if (this.user && this.user.firstName) {
+    this.userInitial = this.user.firstName.charAt(0).toUpperCase();
+  } else {
+    this.userInitial = '?';
+  }
   }
 
   // selectedTab = 'table';
@@ -118,5 +131,25 @@ export class AllApplicantsComponent {
      console.log("Typed value:", value); 
    this.searchInput$.next(value)
    }
+
+   userInitial: string = '';
+dropdownOpen: boolean = false;
+
+toggleDropdown() {
+  this.dropdownOpen = !this.dropdownOpen;
+}
+
+logout(): void {
+  this.authService.logout();
+  this.dropdownOpen = false;
+  this.router.navigate(['/home']);
+}
+ @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    const clickedInside = this.dropdownRef?.nativeElement.contains(event.target);
+    if (!clickedInside) {
+      this.dropdownOpen = false;
+    }
+  }
   
 }

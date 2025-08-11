@@ -44,8 +44,12 @@
         <!-- <button type="button" class="azure-login">Login with Azure</button> -->
   
         <div class="submit-section">
-          <button type="submit" [disabled]="signinform.invalid" class="submit-btn">Login</button>
-          <!-- <div><nz-spin nzSimple class="spinner"></nz-spin></div> -->
+          <button type="submit" *ngIf="!isLoading" [disabled]="signinform.invalid" class="submit-btn">Login</button>
+          <div *ngIf="isLoading" style="display: flex; align-items: center; justify-content: center;
+          height: 38px; width: 182px; gap: 20px">
+          <nz-spin nzSimple></nz-spin>
+          <span style="color: gray; font-size: 16px;">Loading...</span>
+        </div>
         </div>
       </form>
   

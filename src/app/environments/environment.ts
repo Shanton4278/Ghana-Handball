@@ -1,3 +1,3 @@
 export const environment = {
-    baseUrl : 'https://handballassociationofghana.com/backend/api/prod'
+    baseUrl : 'http://18.232.216.85:3115/api/prod'
 }

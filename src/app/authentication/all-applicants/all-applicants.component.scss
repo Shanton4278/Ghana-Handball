@@ -312,6 +312,24 @@
     border: 1px solid #8B0000;
     color: white;
   }
+
+  .initial-circle {
+    width: 40px;
+    height: 40px;
+    // background-color: #4a4a4a;
+    background: linear-gradient(235deg, #4a4a4a 65%, #ffffff 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: medium;
+    font-size: 24px;
+  }
+  .dropdown {
+    z-index: 1000;
+    width: 170px;
+  }
   
   
 

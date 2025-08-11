@@ -28,14 +28,18 @@ export class SignInComponent {
     this.notification.create(type, title, message, {nzPlacement: position, nzDuration: 4000});
   }
   showPassword = false;
+  isLoading = false;
 
   signInData!: signInModel
   submit(item:NgForm){
+    this.isLoading = true;
     this.authService.signin(this.signInData).subscribe({
       next: (response) => {
         console.log("signed in", response)
         localStorage.setItem('token',response.token)
+        localStorage.setItem('user', JSON.stringify(response));
         this.createNotification('top', "success", "Login Successful!!", "Welcome Back!");
+        this.isLoading = false;
         this.router.navigate(['auth/all'])
       },
       error: (error) => {
@@ -45,6 +49,7 @@ export class SignInComponent {
          }else (error.status === 404 || error.status === 400);{
            this.createNotification("top", "error", "Invalid credentials", "Kindly check your email and password and try again!")
          }
+         this.isLoading = false;
       },
       complete: () =>{
 
