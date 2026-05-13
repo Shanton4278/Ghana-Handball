@@ -79,7 +79,7 @@ selectDivision(division: string) {
 
 selectTeam(team: string){
   this.selectedTeam = team;
-  console.log("TEAM here is the team",this.selectedTeam)
+  // console.log("TEAM here is the team",this.selectedTeam)
   localStorage.setItem('selectedTeam',team);
   this.registrationService.setSelectedTeam(team);
 }
@@ -87,11 +87,11 @@ selectTeam(team: string){
 getAllTeams(){
   this.registrationService.allTeams(this.teamsData).subscribe({
     next: (response) =>{
-      console.log("all teams here", response)
+      // console.log("all teams here", response)
       this.listOfTeams = response.data.teams;
     },
     error: (error)=>{
-      console.error("failed to fetch teams", error)
+      // console.error("failed to fetch teams", error)
     },
     complete:()=>{
 
@@ -102,13 +102,13 @@ getAllTeams(){
 divisionOne(){
   this.registrationService.getDivisionOneTeams().subscribe({
     next: (response) => {
-      console.log("Division One Teams", response);
+      // console.log("Division One Teams", response);
       this.listOfTeams = response.data.teams;
-      console.log("First set of Teams:", this.listOfTeams[0]);
+      // console.log("First set of Teams:", this.listOfTeams[0]);
 
     },
     error: (error) => {
-      console.error("Failed to fetch Division One teams", error);
+      // console.error("Failed to fetch Division One teams", error);
     }
   })
 }
@@ -116,13 +116,13 @@ divisionOne(){
 divisionTwo(){
   this.registrationService.getDivisionTwoTeams().subscribe({
     next: (response) => {
-      console.log("Division Two Teams", response);
+      // console.log("Division Two Teams", response);
       this.listOfTeams = response.data.teams;
-      console.log("Second set of Teams:", this.listOfTeams[0]);
+      // console.log("Second set of Teams:", this.listOfTeams[0]);
 
     },
     error: (error) => {
-      console.error("Failed to fetch Division Two teams", error);
+      // console.error("Failed to fetch Division Two teams", error);
     }
   })
 }

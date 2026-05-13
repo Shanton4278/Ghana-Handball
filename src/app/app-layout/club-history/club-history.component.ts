@@ -50,7 +50,7 @@ submit(form: NgForm) {
 
   this.registrationService.register(finalPayload).subscribe({
     next: (response) => {
-      console.log("✅ Registration successful", response);
+      console.log(" Registration successful", response);
       this.router.navigate(['/success']);
       this.createNotification("top", "success", "Success!", "Registration successful")
     },

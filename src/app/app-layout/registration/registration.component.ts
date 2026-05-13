@@ -34,17 +34,17 @@ ngOnInit():void{
   if (savedDivision) {
     // this.selectedDivision = JSON.parse(savedDivision).division;
     this.selectedDivision = savedDivision;
-    console.log("selected division arrived", this.selectedDivision)
+    // console.log("selected division arrived", this.selectedDivision)
     this.registerData.division = this.selectedDivision;
-    console.log("sected from service appeared", this.registerData.division)
+    // console.log("sected from service appeared", this.registerData.division)
   }
 
   const savedTeam = localStorage.getItem('selectedTeam');
   if (savedTeam){
     this.selectedTeam = savedTeam;
-    console.log("SAVED SELECTED TEAM HERE", this.selectedTeam)
+    // console.log("SAVED SELECTED TEAM HERE", this.selectedTeam)
     this.registerData.team = this.selectedTeam;
-    console.log("TEAM FROM SERVICE", this.registerData.team)
+    // console.log("TEAM FROM SERVICE", this.registerData.team)
   }
 }
 
@@ -57,24 +57,24 @@ selectDivision(division: string) {
   // console.log('User selected division:', division);
   this.registrationService.setSelectedDivision(division);
   this.selectedDivision = division;
-  console.log('Selected Division:', division);
+  // console.log('Selected Division:', division);
 }
 
 selectTeam(team:string){
   this.registrationService.setSelectedTeam(team);
   this.selectedTeam = team;
-  console.log('Selected Team:', team);
+  // console.log('Selected Team:', team);
 }
 
 saveAndContinue(form:NgForm){
   this.isSubmitting = true;
   const selectedDivision = this.selectedDivision || this.registrationService.getFormData().division;
-  console.log('Confirm division from service:', this.registrationService.getFormData().division);
-  console.log("Selected Division:", selectedDivision);
-  console.log("Service Division:", this.registrationService.getFormData().division);
+  // console.log('Confirm division from service:', this.registrationService.getFormData().division);
+  // console.log("Selected Division:", selectedDivision);
+  // console.log("Service Division:", this.registrationService.getFormData().division);
 
   const selectedTeam = this.selectedTeam || this.registrationService.getFormData().team;
-  console.log("TEAMCON service team", this.registrationService.getFormData().team)
+  // console.log("TEAMCON service team", this.registrationService.getFormData().team)
 
   if (this.imageUploading) {
     alert("Please wait, image is still uploading...");
@@ -115,7 +115,7 @@ saveAndContinue(form:NgForm){
         team: selectedTeam,
         imageUrl: this.registerData.imageUrl,
       };
-      console.log('Payload before CONTINUE:', payload);
+      // console.log('Payload before CONTINUE:', payload);
       if (!payload.division) {
         alert('Please select a division before continuing.');
         return;
@@ -128,13 +128,16 @@ saveAndContinue(form:NgForm){
       this.registrationService.register(payload).subscribe({
         next: (response)=>{
           // console.log("reggggggg", response)
-          console.log("Registration successful", response);
-      this.router.navigate(['/success']);
-      this.createNotification("top", "success", "Success!", "Registration successful")
-      this.isSubmitting = false;
+          // console.log("Registration successful", response);
+          this.createNotification("top", "success", "Success!", "Registration successful")
+          this.isSubmitting = false;
+          setTimeout(() => {
+            this.router.navigate(['/success']);
+          }, 1000);  
+          
         },
         error: (error)=>{
-          console.error("cant register",error);
+          // console.error("cant register",error);
           this.createNotification("top", "error", "Error!", "Registration failed. Please try again.");
           this.isSubmitting = false;
         },
@@ -180,7 +183,7 @@ onFileSelected(event: any) {
       },
       error: (err) => {
         this.imageUploading = false;
-        console.error('Image upload failed:', err);
+        // console.error('Image upload failed:', err);
         alert('Upload failed. Try again.');
       }
     });

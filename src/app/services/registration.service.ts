@@ -46,7 +46,7 @@ export class RegistrationService {
   }
 
   setSelectedTeam(team: string) {
-    const formattedTeam = team.trim();  // If needed, you can format further
+    const formattedTeam = team.trim();  
     this.selectedTeam = formattedTeam;
   
     // Update both in-memory and stored registerData
